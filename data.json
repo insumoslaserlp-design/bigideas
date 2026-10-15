@@ -1,0 +1,127 @@
+{
+ "rev": 1,
+ "shop": {
+  "name": "Big Ideas Little Maker",
+  "tagline": "little maker, big ideas",
+  "heroTitle": "3D printed treasures, designed by a 9-year-old maker",
+  "about": "Every piece is printed one thin layer at a time in my little workshop. Pick your favorites, add them to your list, and send me a message on Instagram to order.",
+  "heroNote": "thank you for supporting a young maker!",
+  "city": "Cleveland, Ohio",
+  "instagram": "bigideas_littlemaker",
+  "contactNote": "Orders are handled by a parent through Instagram messages.",
+  "categories": [
+   "Fidgets",
+   "Keychains",
+   "Animals",
+   "Desk & Home",
+   "Gifts"
+  ],
+  "newDays": 21
+ },
+ "products": [
+  {
+   "id": "p-dragon",
+   "name": "Flexi Crystal Dragon",
+   "category": "Fidgets",
+   "price": 14,
+   "stock": 5,
+   "madeToOrder": false,
+   "description": "A wiggly dragon with moving joints. It bends, curls and sits on your shoulder. Printed in one piece, no glue!",
+   "colors": "Pink, Purple, Rainbow silk",
+   "size": "10 in long",
+   "printHours": "4",
+   "photos": [
+    null,
+    null,
+    null
+   ],
+   "video": null,
+   "featured": true,
+   "hidden": false,
+   "example": true,
+   "createdAt": "2026-10-10"
+  },
+  {
+   "id": "p-name",
+   "name": "Custom Name Keychain",
+   "category": "Keychains",
+   "price": 7,
+   "stock": 0,
+   "madeToOrder": true,
+   "description": "Your name (up to 10 letters) in two colors. Great for backpacks and lunch boxes.",
+   "colors": "Pick any 2 colors",
+   "size": "3 in",
+   "printHours": "1",
+   "photos": [
+    null,
+    null,
+    null
+   ],
+   "video": null,
+   "featured": false,
+   "hidden": false,
+   "example": true,
+   "createdAt": "2026-10-01"
+  },
+  {
+   "id": "p-cat",
+   "name": "Sleepy Cat Planter",
+   "category": "Desk & Home",
+   "price": 12,
+   "stock": 2,
+   "madeToOrder": false,
+   "description": "A tiny planter for succulents with a sleepy cat face. Has a drainage hole.",
+   "colors": "White, Blush, Mint",
+   "size": "3.5 in tall",
+   "printHours": "5",
+   "photos": [
+    null,
+    null,
+    null
+   ],
+   "video": null,
+   "featured": false,
+   "hidden": false,
+   "example": true,
+   "createdAt": "2026-09-20"
+  },
+  {
+   "id": "p-axolotl",
+   "name": "Pocket Axolotl",
+   "category": "Animals",
+   "price": 5,
+   "stock": 12,
+   "madeToOrder": false,
+   "description": "A smiley little axolotl that fits in your pocket. Collect all the colors!",
+   "colors": "Pink, Blue, Gold",
+   "size": "2 in",
+   "printHours": "0.5",
+   "photos": [
+    null,
+    null,
+    null
+   ],
+   "video": null,
+   "featured": false,
+   "hidden": false,
+   "example": true,
+   "createdAt": "2026-09-05"
+  }
+ ],
+ "promos": [
+  {
+   "id": "pr-fall",
+   "title": "Fall Fidget Week",
+   "banner": "Fall Fidget Week: every fidget is on sale",
+   "kind": "percent",
+   "value": 10,
+   "scope": "category",
+   "category": "Fidgets",
+   "productIds": [],
+   "start": "2026-10-01",
+   "end": "2026-10-31",
+   "active": true,
+   "example": true
+  }
+ ]
+}

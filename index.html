@@ -1,0 +1,905 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="3D printed treasures designed by a 9-year-old maker in Cleveland, Ohio.">
+<link rel="icon" href="logo.webp">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title data-keep>Big Ideas Little Maker</title>
+<link data-keep rel="preconnect" href="https://fonts.googleapis.com">
+<link data-keep rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Nunito:wght@400;600;700;800&family=Caveat:wght@500;700&display=swap">
+<style id="theme">
+/* Layout: a blush "print bed" page. Logo header, promo ribbon, filter chips, a soft card grid; admin lives in a side sheet. */
+:root{
+  --paper:#fbf2ef; --paper-2:#f5e4e0; --card:#ffffff; --ink:#4f3238; --ink-soft:#866a6f;
+  --rose:#c98a8e; --rose-deep:#a0555f; --butter:#f1c96f; --mint:#8ccdbd; --line:#ecd6d2;
+  --ok:#3f8f6e; --warn:#c2782a; --bad:#b4424f; --on-rose:#ffffff;
+  --logo:url(data:image/webp;base64,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);
+  --f-display:"Young Serif",Georgia,"Times New Roman",serif;
+  --f-body:"Nunito",ui-rounded,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-hand:"Caveat","Segoe Print","Comic Sans MS",cursive;
+  --r-lg:22px; --r-md:14px; --r-sm:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#231a1c; --paper-2:#2c2124; --card:#33262a; --ink:#f7e6e3; --ink-soft:#c3a8ac;
+  --rose:#e3a3a8; --rose-deep:#f0b8bd; --butter:#e8c06a; --mint:#7cc3b2; --line:#4a3a3e;
+  --ok:#7bcfa9; --warn:#efaa60; --bad:#f08a96; --on-rose:#2a1b1e; color-scheme:dark }}
+:root[data-theme="dark"]{
+  --paper:#231a1c; --paper-2:#2c2124; --card:#33262a; --ink:#f7e6e3; --ink-soft:#c3a8ac;
+  --rose:#e3a3a8; --rose-deep:#f0b8bd; --butter:#e8c06a; --mint:#7cc3b2; --line:#4a3a3e;
+  --ok:#7bcfa9; --warn:#efaa60; --bad:#f08a96; --on-rose:#2a1b1e; color-scheme:dark }
+
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.5;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 40px}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:3px solid var(--butter);outline-offset:2px;border-radius:6px}
+.wrap{max-width:1120px;margin:0 auto}
+h1,h2,h3{font-family:var(--f-display);font-weight:400;text-wrap:balance;margin:0;line-height:1.15}
+
+/* header */
+.top{display:flex;align-items:center;gap:14px;padding-block:18px 6px;flex-wrap:wrap}
+.logo{width:68px;height:68px;border-radius:50%;background:var(--logo) center/112% no-repeat;box-shadow:0 0 0 3px var(--card),0 0 0 4px var(--line);flex:none}
+.brand{min-width:0;flex:1}
+.brand h1{font-size:clamp(1.4rem,3.6vw,1.9rem);color:var(--rose-deep)}
+.brand .hand{font-family:var(--f-hand);font-size:1.35rem;color:var(--ink-soft);line-height:1}
+.top-actions{display:flex;gap:8px;flex-wrap:wrap}
+.pill{display:inline-flex;align-items:center;gap:6px;border:1.5px solid var(--line);background:var(--card);border-radius:999px;padding:8px 14px;font-weight:700;font-size:.92rem;text-decoration:none;color:var(--ink)}
+.pill:hover{border-color:var(--rose)}
+.pill .count{background:var(--rose-deep);color:var(--on-rose);border-radius:999px;min-width:22px;padding:0 6px;font-size:.8rem;text-align:center}
+.pill.admin{border-style:dashed}
+svg.i{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* promo ribbon */
+.promos{display:grid;gap:8px;margin-top:12px}
+.promo{display:flex;align-items:center;gap:12px;background:var(--butter);color:#4a3415;border-radius:var(--r-md);padding:10px 16px;font-weight:700;flex-wrap:wrap}
+.promo .tag{font-family:var(--f-hand);font-size:1.5rem;line-height:1}
+.promo small{font-weight:600;opacity:.8}
+
+/* hero */
+.hero{margin-top:18px;border-radius:var(--r-lg);padding:26px clamp(18px,4vw,36px);position:relative;overflow:hidden;
+  background:repeating-linear-gradient(0deg,transparent 0 7px,color-mix(in srgb,var(--rose) 13%,transparent) 7px 8px),var(--paper-2)}
+.hero h2{font-size:clamp(1.6rem,4.4vw,2.5rem);max-width:26ch}
+.hero p{max-width:60ch;margin:10px 0 0;color:var(--ink-soft);font-size:1.05rem}
+.hero .note{font-family:var(--f-hand);font-size:1.4rem;color:var(--rose-deep);margin-top:8px}
+
+/* filters */
+.filters{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:22px 0 14px}
+.search{flex:1 1 220px;min-width:0;display:flex;align-items:center;gap:8px;background:var(--card);border:1.5px solid var(--line);border-radius:999px;padding:8px 14px}
+.search input{border:0;outline:0;background:transparent;width:100%;min-width:0}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{border:1.5px solid var(--line);background:transparent;border-radius:999px;padding:6px 13px;font-weight:700;font-size:.9rem;color:var(--ink-soft)}
+.chip[aria-pressed="true"]{background:var(--rose-deep);border-color:var(--rose-deep);color:var(--on-rose)}
+
+/* grid */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,230px),1fr));gap:18px}
+.card{background:var(--card);border-radius:var(--r-lg);overflow:hidden;display:flex;flex-direction:column;border:1.5px solid var(--line);transition:transform .2s ease,box-shadow .2s ease;text-align:left;padding:0}
+.card:hover{transform:translateY(-3px) rotate(-.4deg);box-shadow:0 10px 24px -14px color-mix(in srgb,var(--rose-deep) 60%,transparent)}
+.thumb{aspect-ratio:1/1;width:100%;max-width:100%;position:relative;background:var(--paper-2);display:block}
+.thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.ph{width:100%;height:100%;display:grid;place-items:center;
+  background:repeating-linear-gradient(0deg,transparent 0 9px,color-mix(in srgb,var(--rose) 18%,transparent) 9px 11px),var(--paper-2)}
+.ph svg{width:38%;height:38%;stroke:var(--rose);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.badges{position:absolute;top:10px;left:10px;right:10px;display:flex;gap:6px;flex-wrap:wrap;pointer-events:none}
+.badge{font-size:.75rem;font-weight:800;border-radius:999px;padding:3px 9px;background:var(--card);color:var(--ink);letter-spacing:.02em}
+.badge.sale{background:var(--bad);color:#fff}
+.badge.new{background:var(--mint);color:#173b33}
+.badge.sample{background:var(--ink);color:var(--paper)}
+.badge.vid{margin-left:auto}
+.card-body{padding:12px 14px 14px;display:flex;flex-direction:column;gap:4px;flex:1}
+.card-body h3{font-size:1.15rem}
+.cat{font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-soft)}
+.row{display:flex;align-items:baseline;justify-content:space-between;gap:8px;margin-top:auto;padding-top:6px;flex-wrap:wrap}
+.price{font-weight:800;font-size:1.2rem;font-variant-numeric:tabular-nums}
+.price s{font-weight:600;font-size:.9rem;color:var(--ink-soft);margin-right:6px}
+.price.on-sale b{color:var(--bad)}
+.stock{font-size:.82rem;font-weight:700}
+.stock.ok{color:var(--ok)} .stock.low{color:var(--warn)} .stock.out{color:var(--bad)} .stock.mto{color:var(--ink-soft)}
+.empty{grid-column:1/-1;text-align:center;padding:48px 16px;color:var(--ink-soft)}
+.empty .hand{font-family:var(--f-hand);font-size:1.6rem;color:var(--rose-deep)}
+
+footer{margin-top:40px;text-align:center;color:var(--ink-soft);font-size:.9rem;display:grid;gap:4px}
+footer .hand{font-family:var(--f-hand);font-size:1.4rem;color:var(--rose-deep)}
+
+/* overlays */
+.scrim{position:fixed;inset:0;background:color-mix(in srgb,#2a1418 45%,transparent);z-index:40;display:flex;justify-content:center;align-items:flex-start;overflow-y:auto;
+  padding:calc(24px + env(safe-area-inset-top,0px)) max(12px,env(safe-area-inset-right,0px)) calc(24px + env(safe-area-inset-bottom,0px)) max(12px,env(safe-area-inset-left,0px))}
+.modal{background:var(--card);border-radius:var(--r-lg);width:min(920px,100%);position:relative;overflow:hidden}
+.x{position:absolute;top:10px;right:10px;z-index:2;width:38px;height:38px;border-radius:50%;border:0;background:var(--card);display:grid;place-items:center;box-shadow:0 2px 8px rgba(0,0,0,.12)}
+.detail{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr)}
+@media (max-width:720px){.detail{grid-template-columns:1fr}}
+.gallery{background:var(--paper-2);display:flex;flex-direction:column}
+.stage{aspect-ratio:1/1;width:100%;max-width:100%;display:grid;place-items:center;background:var(--paper-2)}
+.stage img,.stage video{width:100%;height:100%;object-fit:contain;display:block;background:#000}
+.stage img{background:transparent}
+.thumbs{display:flex;gap:8px;padding:10px;flex-wrap:wrap}
+.thumbs button{width:62px;height:62px;border-radius:var(--r-sm);border:2px solid transparent;padding:0;overflow:hidden;background:var(--card);display:grid;place-items:center}
+.thumbs button[aria-current="true"]{border-color:var(--rose)}
+.thumbs img{width:100%;height:100%;object-fit:cover}
+.info{padding:26px 24px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.info h2{font-size:1.8rem}
+.info .desc{white-space:pre-line;color:var(--ink)}
+.specs{display:flex;gap:8px;flex-wrap:wrap}
+.spec{display:inline-flex;gap:6px;align-items:center;background:var(--paper-2);border-radius:999px;padding:5px 12px;font-size:.88rem;font-weight:700}
+.spec span{color:var(--ink-soft);font-weight:600}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:999px;padding:12px 20px;font-weight:800;text-decoration:none;font-size:1rem}
+.btn.primary{background:var(--rose-deep);color:var(--on-rose)}
+.btn.soft{background:var(--paper-2);color:var(--ink)}
+.btn.ghost{background:transparent;border:1.5px solid var(--line);color:var(--ink)}
+.btn.danger{background:var(--bad);color:#fff}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.btn.sm{padding:7px 13px;font-size:.88rem}
+.actions{display:flex;gap:8px;flex-wrap:wrap}
+.help{font-size:.88rem;color:var(--ink-soft)}
+.copybox{width:100%;min-height:110px;border:1.5px solid var(--line);border-radius:var(--r-md);padding:10px;background:var(--paper);resize:vertical}
+
+/* list drawer */
+.sheet{background:var(--card);width:min(460px,100%);border-radius:var(--r-lg);padding:24px;display:flex;flex-direction:column;gap:14px;position:relative}
+.li{display:grid;grid-template-columns:52px minmax(0,1fr) auto;gap:10px;align-items:center}
+.li .mini{width:52px;height:52px;border-radius:var(--r-sm);overflow:hidden}
+.li .mini img{width:100%;height:100%;object-fit:cover}
+.qty{display:inline-flex;align-items:center;border:1.5px solid var(--line);border-radius:999px}
+.qty button{border:0;background:transparent;width:30px;height:30px;font-weight:800}
+.qty span{min-width:22px;text-align:center;font-variant-numeric:tabular-nums}
+.total{display:flex;justify-content:space-between;font-weight:800;font-size:1.1rem;border-top:1.5px dashed var(--line);padding-top:10px}
+
+/* admin */
+.admin-wrap{background:var(--paper);width:min(1040px,100%);border-radius:var(--r-lg);overflow:hidden;position:relative;border:1.5px solid var(--line)}
+.admin-head{display:flex;align-items:center;gap:12px;padding:16px 20px;background:var(--card);border-bottom:1.5px solid var(--line);flex-wrap:wrap;position:sticky;top:0;z-index:3}
+.admin-head h2{font-size:1.35rem;flex:1;min-width:150px}
+.dirty{font-size:.85rem;font-weight:800;color:var(--warn)}
+.tabs{display:flex;gap:4px;padding:10px 20px 0;flex-wrap:wrap}
+.tab{border:0;background:transparent;padding:9px 16px;border-radius:12px 12px 0 0;font-weight:800;color:var(--ink-soft)}
+.tab[aria-selected="true"]{background:var(--card);color:var(--rose-deep)}
+.panel{background:var(--card);margin:0 20px 20px;border-radius:0 var(--r-md) var(--r-md) var(--r-md);padding:18px;display:flex;flex-direction:column;gap:14px}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:640px}
+th{font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-soft);text-align:left;padding:6px 8px;font-weight:800}
+td{padding:8px;border-top:1px solid var(--line);vertical-align:middle}
+td.num input{width:86px;text-align:right;font-variant-numeric:tabular-nums}
+.mini-th{width:44px;height:44px;border-radius:8px;overflow:hidden;background:var(--paper-2)}
+.mini-th img{width:100%;height:100%;object-fit:cover}
+.in{border:1.5px solid var(--line);background:var(--paper);border-radius:var(--r-sm);padding:8px 10px;width:100%;min-width:0}
+.in:focus{border-color:var(--rose);outline:0}
+textarea.in{min-height:96px;resize:vertical}
+label.f .in{font-weight:500}
+.form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 16px}
+.form .full{grid-column:1/-1}
+@media (max-width:640px){.form{grid-template-columns:1fr}}
+label.f{display:flex;flex-direction:column;gap:5px;font-weight:700;font-size:.9rem;min-width:0}
+label.f small{font-weight:600;color:var(--ink-soft)}
+.check{display:flex;gap:8px;align-items:center;font-weight:700;font-size:.92rem}
+.check input{width:18px;height:18px;accent-color:var(--rose-deep)}
+.slots{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+@media (max-width:640px){.slots{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.slot{aspect-ratio:1/1;max-width:100%;border:2px dashed var(--line);border-radius:var(--r-md);position:relative;overflow:hidden;display:grid;place-items:center;background:var(--paper);text-align:center;font-weight:800;font-size:.85rem;color:var(--ink-soft)}
+.slot img,.slot video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.slot label{cursor:pointer;display:grid;place-items:center;gap:4px;width:100%;height:100%;padding:8px}
+.slot input{position:absolute;width:1px;height:1px;opacity:0}
+.slot .rm{position:absolute;top:6px;right:6px;z-index:2;border:0;border-radius:999px;background:var(--card);padding:3px 9px;font-size:.78rem;font-weight:800}
+.slot.busy::after{content:attr(data-msg);position:absolute;inset:0;display:grid;place-items:center;background:color-mix(in srgb,var(--card) 82%,transparent);color:var(--ink);font-weight:800}
+.stepper{display:inline-flex;align-items:center;gap:2px}
+.stepper button{width:28px;height:28px;border-radius:50%;border:1.5px solid var(--line);background:var(--paper);font-weight:800;line-height:1}
+.stepper input{width:52px;text-align:center}
+.promo-card{border:1.5px solid var(--line);border-radius:var(--r-md);padding:14px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.promo-card .grow{flex:1;min-width:200px}
+.state{font-size:.75rem;font-weight:800;border-radius:999px;padding:3px 9px}
+.state.live{background:var(--mint);color:#173b33}
+.state.off{background:var(--paper-2);color:var(--ink-soft)}
+.state.soon{background:var(--butter);color:#4a3415}
+.prodpick{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,180px),1fr));gap:6px;max-height:200px;overflow:auto;border:1.5px solid var(--line);border-radius:var(--r-sm);padding:8px}
+.meter{height:10px;border-radius:999px;background:var(--paper-2);overflow:hidden}
+.meter i{display:block;height:100%;background:var(--rose)}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(20px + env(safe-area-inset-bottom,0px));background:var(--ink);color:var(--paper);padding:10px 18px;border-radius:999px;font-weight:700;z-index:90;max-width:calc(100% - 32px);text-align:center}
+.confirm{display:inline-flex;gap:6px;align-items:center}
+.reels{margin-top:24px;display:grid;gap:12px}
+.custom{margin-top:40px;border-radius:var(--r-lg);border:2px dashed var(--rose);background:var(--card);padding:24px clamp(18px,4vw,34px);display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:24px}
+@media (max-width:760px){.custom{grid-template-columns:1fr}}
+.custom h2{font-size:clamp(1.5rem,3.6vw,2rem)}
+.custom .hand{font-family:var(--f-hand);font-size:1.45rem;color:var(--rose-deep)}
+.custom .intro{display:grid;gap:10px;align-content:start}
+.custom .intro p{margin:0;color:var(--ink-soft)}
+.gal{margin-top:40px;display:grid;gap:12px}
+.gal-head{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.gal-head h2{font-size:1.5rem}
+.gal-head .hand{font-family:var(--f-hand);font-size:1.3rem;color:var(--rose-deep)}
+.gal-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,170px),1fr));gap:12px}
+.polaroid{background:var(--card);border:1.5px solid var(--line);border-radius:var(--r-md);padding:8px 8px 10px;display:flex;flex-direction:column;gap:6px;text-align:left;transition:transform .2s ease}
+.polaroid:nth-child(odd){transform:rotate(-1.2deg)} .polaroid:nth-child(even){transform:rotate(1deg)}
+.polaroid:hover{transform:rotate(0) translateY(-3px)}
+.polaroid .pic{aspect-ratio:1/1;width:100%;max-width:100%;border-radius:8px;overflow:hidden;background:var(--paper-2);display:block}
+.polaroid .pic img{width:100%;height:100%;object-fit:cover;display:block}
+.polaroid .who{font-family:var(--f-hand);font-size:1.25rem;line-height:1.1;color:var(--ink)}
+.polaroid .what{font-size:.82rem;color:var(--ink-soft)}
+.gal-view{display:grid;gap:12px;padding:18px}
+.gal-view img{width:100%;max-height:70vh;object-fit:contain;border-radius:var(--r-md);background:var(--paper-2)}
+.refpick{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.refpick img{width:72px;height:72px;object-fit:cover;border-radius:var(--r-sm);border:1.5px solid var(--line)}
+.refpick input{position:absolute;width:1px;height:1px;opacity:0}
+.card-img{width:100%;max-width:360px;border-radius:var(--r-md);border:1.5px solid var(--line);display:block}
+.custom ol{margin:0;padding-left:20px;color:var(--ink-soft);display:grid;gap:4px}
+.reels-head{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.reels-head h2{font-size:1.5rem}
+.reels-head .hand{font-family:var(--f-hand);font-size:1.3rem;color:var(--rose-deep)}
+.reel-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;max-width:620px}
+.reel{display:flex;flex-direction:column;gap:6px;min-width:0}
+.reel video{width:100%;max-width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:var(--r-lg);background:#000;display:block;border:1.5px solid var(--line)}
+.reel p{margin:0;font-size:.92rem;color:var(--ink-soft);overflow-wrap:anywhere}
+.reel a{font-weight:800;font-size:.9rem;color:var(--rose-deep)}
+.reel-row{display:grid;grid-template-columns:64px minmax(0,1fr) auto;gap:12px;align-items:center;border:1.5px solid var(--line);border-radius:var(--r-md);padding:10px}
+.reel-row video{width:64px;aspect-ratio:9/16;object-fit:cover;border-radius:8px;background:#000}
+@media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<template id="shell">
+<div class="wrap">
+  <header class="top">
+    <div class="logo" role="img" aria-label="Big Ideas Little Maker logo"></div>
+    <div class="brand">
+      <h1 data-bind="name"></h1>
+      <div class="hand" data-bind="tagline"></div>
+    </div>
+    <div class="top-actions">
+      <a class="pill" data-bind="igLink" target="_blank" rel="noopener"><svg class="i" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6"/></svg><span data-bind="igHandle"></span></a>
+      <button class="pill" id="listBtn" type="button"><svg class="i" viewBox="0 0 24 24"><path d="M12 21s-7-4.4-9.3-9A5.3 5.3 0 0 1 12 6a5.3 5.3 0 0 1 9.3 6c-2.3 4.6-9.3 9-9.3 9z"/></svg>My list <span class="count" id="listCount">0</span></button>
+      <button class="pill admin" id="adminBtn" type="button" hidden><svg class="i" viewBox="0 0 24 24"><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg><span id="adminLabel">Admin</span></button>
+    </div>
+  </header>
+  <section class="promos" id="promoBar" aria-label="Current deals"></section>
+  <section class="hero">
+    <h2 data-bind="heroTitle"></h2>
+    <p data-bind="about"></p>
+    <div class="note" data-bind="heroNote"></div>
+  </section>
+  <section class="reels" id="reels" aria-label="Latest from Instagram" hidden></section>
+  <section class="filters" aria-label="Find a product">
+    <label class="search"><svg class="i" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="q" type="search" placeholder="Search dragons, keychains, gifts…" aria-label="Search products"></label>
+    <div class="chips" id="chips"></div>
+  </section>
+  <main class="grid" id="grid" aria-live="polite"></main>
+  <section class="gal" id="gallery" aria-label="Happy customers" hidden></section>
+  <section class="custom" id="custom" aria-labelledby="customTitle">
+    <div class="intro">
+      <div class="hand">have a big idea?</div>
+      <h2 id="customTitle" data-bind="customTitle"></h2>
+      <p data-bind="customText"></p>
+      <ol><li>Tell us what you'd like.</li><li>Copy your request and send it to us on Instagram.</li><li>We reply with a price and a time to print it.</li></ol>
+    </div>
+    <form class="form" id="customForm">
+      <label class="f">What kind of thing?<select class="in" id="c-kind" name="kind"><option>Keychain</option><option>Animal or figure</option><option>Fidget toy</option><option>Desk or home item</option><option>Gift or party favor</option><option>Something else</option></select></label>
+      <label class="f">How many?<input class="in" id="c-qty" name="qty" type="number" min="1" value="1"></label>
+      <label class="f full">Describe your idea<textarea class="in" id="c-idea" name="idea" required placeholder="Example: a unicorn keychain with the name EMMA, for a birthday party"></textarea></label>
+      <label class="f">Colors<input class="in" id="c-colors" name="colors" placeholder="Purple and silver"></label>
+      <label class="f">Size<input class="in" id="c-size" name="size" placeholder="About 3 in"></label>
+      <label class="f">Budget (USD)<input class="in" id="c-budget" name="budget" placeholder="$10 – $20"></label>
+      <label class="f">Needed by<input class="in" id="c-date" name="date" type="date"></label>
+      <label class="f full">Your name or Instagram<input class="in" id="c-name" name="name" placeholder="@yourname"></label>
+      <div class="f full"><span>Reference photo <small>(optional)</small></span><div class="refpick"><img id="c-thumb" alt="Your reference photo" hidden><label class="btn ghost sm" for="c-photo">Choose a photo</label><input id="c-photo" type="file" accept="image/*"><button class="btn ghost sm" type="button" id="c-nophoto" hidden>Remove</button></div><small>A drawing, a screenshot or a picture of something you like.</small></div>
+      <div class="actions full"><button class="btn primary" type="submit">Prepare my request</button></div>
+      <div class="full" id="customOut" hidden style="display:grid;gap:8px">
+        <textarea class="copybox" id="c-msg" readonly aria-label="Your request message"></textarea>
+        <div class="actions"><button class="btn primary" type="button" id="c-copy">Copy request</button><a class="btn ghost" id="c-dm" target="_blank" rel="noopener">Open Instagram DM</a></div>
+        <div id="c-cardwrap" hidden style="display:grid;gap:8px"><b>Your request card</b><img class="card-img" id="c-card" alt="Your request card with your reference photo"><div class="actions"><button class="btn ghost sm" type="button" id="c-save" hidden>Save image</button></div><div class="help">Save this image (on a phone, press and hold it) and send it in the same DM with your message.</div></div>
+        <div class="help">Paste the message in a DM to us. You can also attach any other photos there.</div>
+      </div>
+    </form>
+  </section>
+  <footer>
+    <div class="hand">made layer by layer</div><div><a href="#admin" id="adminLink" style="color:inherit;opacity:.55;font-size:.8rem">admin</a></div>
+    <div><span data-bind="city"></span> · Prices in US dollars · <span data-bind="igHandle2"></span></div>
+  </footer>
+</div>
+</template>
+<div id="root"></div>
+<script type="application/json" id="store">{"rev":1,"shop":{"name":"Big Ideas Little Maker","tagline":"little maker, big ideas","heroTitle":"3D printed treasures, designed by a 9-year-old maker","about":"Every piece is printed one thin layer at a time in my little workshop. Pick your favorites, add them to your list, and send me a message on Instagram to order.","heroNote":"thank you for supporting a young maker!","city":"Cleveland, Ohio","instagram":"bigideas_littlemaker","contactNote":"Orders are handled by a parent through Instagram messages.","categories":["Fidgets","Keychains","Animals","Desk & Home","Gifts"],"newDays":21},"products":[{"id":"p-dragon","name":"Flexi Crystal Dragon","category":"Fidgets","price":14,"stock":5,"madeToOrder":false,"description":"A wiggly dragon with moving joints. It bends, curls and sits on your shoulder. Printed in one piece, no glue!","colors":"Pink, Purple, Rainbow silk","size":"10 in long","printHours":"4","photos":[null,null,null],"video":null,"featured":true,"hidden":false,"example":true,"createdAt":"2026-10-10"},{"id":"p-name","name":"Custom Name Keychain","category":"Keychains","price":7,"stock":0,"madeToOrder":true,"description":"Your name (up to 10 letters) in two colors. Great for backpacks and lunch boxes.","colors":"Pick any 2 colors","size":"3 in","printHours":"1","photos":[null,null,null],"video":null,"featured":false,"hidden":false,"example":true,"createdAt":"2026-10-01"},{"id":"p-cat","name":"Sleepy Cat Planter","category":"Desk & Home","price":12,"stock":2,"madeToOrder":false,"description":"A tiny planter for succulents with a sleepy cat face. Has a drainage hole.","colors":"White, Blush, Mint","size":"3.5 in tall","printHours":"5","photos":[null,null,null],"video":null,"featured":false,"hidden":false,"example":true,"createdAt":"2026-09-20"},{"id":"p-axolotl","name":"Pocket Axolotl","category":"Animals","price":5,"stock":12,"madeToOrder":false,"description":"A smiley little axolotl that fits in your pocket. Collect all the colors!","colors":"Pink, Blue, Gold","size":"2 in","printHours":"0.5","photos":[null,null,null],"video":null,"featured":false,"hidden":false,"example":true,"createdAt":"2026-09-05"}],"promos":[{"id":"pr-fall","title":"Fall Fidget Week","banner":"Fall Fidget Week: every fidget is on sale","kind":"percent","value":10,"scope":"category","category":"Fidgets","productIds":[],"start":"2026-10-01","end":"2026-10-31","active":true,"example":true}]}</script>
+<script id="app">
+(function(){
+"use strict";
+const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const fmt=n=>new Intl.NumberFormat("en-US",{style:"currency",currency:"USD"}).format(n||0);
+const uid=p=>p+"-"+Math.random().toString(36).slice(2,9);
+const today=()=>{const d=new Date();return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")};
+const blob=id=>!id?"":id.includes("/")?id:"/_blob/"+id;
+const ls={get(k){try{return JSON.parse(localStorage.getItem(k))}catch(e){return null}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}},del(k){try{localStorage.removeItem(k)}catch(e){}}};
+const ss={get(k){try{return JSON.parse(sessionStorage.getItem(k))}catch(e){return null}},set(k,v){try{sessionStorage.setItem(k,JSON.stringify(v))}catch(e){}},del(k){try{sessionStorage.removeItem(k)}catch(e){}}};
+
+let SAVED=JSON.parse($("#store").textContent);
+let D=structuredClone(SAVED);           // working copy (admin edits here, shop renders from it)
+let dirty=false, canAdmin=false, artifactApi=null, assetsApi=null;
+let filter={q:"",cat:"All"};
+let lang=ls.get("bi-lang")||"es";
+
+/* ---------- pricing ---------- */
+function promoLive(p){const t=today();return p.active&&(!p.start||p.start<=t)&&(!p.end||p.end>=t)}
+function promoApplies(pr,p){return pr.scope==="all"||(pr.scope==="category"&&pr.category===p.category)||(pr.scope==="products"&&(pr.productIds||[]).includes(p.id))}
+function priceOf(p){
+  let best=null,sale=p.price;
+  for(const pr of D.promos.filter(promoLive)){ if(!promoApplies(pr,p))continue;
+    const v=pr.kind==="percent"?p.price*(1-pr.value/100):Math.max(0,p.price-pr.value);
+    if(v<sale-0.004){sale=v;best=pr} }
+  return {base:p.price,sale:Math.round(sale*100)/100,promo:best};
+}
+function stockInfo(p){
+  if(p.stock>3)return{cls:"ok",txt:"In stock"};
+  if(p.stock>0)return{cls:"low",txt:`Only ${p.stock} left!`};
+  if(p.madeToOrder)return{cls:"mto",txt:"Made to order"};
+  return{cls:"out",txt:"Sold out"};
+}
+function isNew(p){if(!p.createdAt)return false;return (Date.now()-new Date(p.createdAt+"T12:00:00").getTime())/864e5<=(+D.shop.newDays||21)}
+const BULB=`<svg viewBox="0 0 24 24"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.6 10.8c.6.5 1 1.2 1 2V16h5.2v-.2c0-.8.4-1.5 1-2A6 6 0 0 0 12 3z"/><path d="M12 7.5c-.6-.9-2-.6-2 .5 0 .9 2 2.2 2 2.2s2-1.3 2-2.2c0-1.1-1.4-1.4-2-.5z"/></svg>`;
+const media=(id,alt)=>id?`<img src="${blob(id)}" alt="${esc(alt)}" loading="lazy" data-fb>`:`<div class="ph">${BULB}</div>`;
+document.addEventListener("error",e=>{const el=e.target;if(el&&el.tagName==="IMG"&&el.hasAttribute("data-fb")){const d=document.createElement("div");d.className="ph";d.innerHTML=BULB;el.replaceWith(d)}},true);
+
+/* ---------- shop render ---------- */
+function bind(){
+  const s=D.shop, ig=(s.instagram||"").replace(/^@/,"");
+  const map={customTitle:s.customTitle||"Dream it, we print it",customText:s.customText||"Looking for something that isn't in the shop? Tell us your idea and we'll try to design and 3D print it just for you.",name:s.name,tagline:s.tagline,heroTitle:s.heroTitle,about:s.about,heroNote:s.heroNote,city:s.city,igHandle:"@"+ig,igHandle2:"@"+ig};
+  for(const [k,v] of Object.entries(map)) $$(`[data-bind="${k}"]`).forEach(el=>el.textContent=v||"");
+  $$('[data-bind="igLink"]').forEach(a=>a.href="https://www.instagram.com/"+encodeURIComponent(ig)+"/");
+}
+function renderPromos(){
+  const live=D.promos.filter(promoLive);
+  $("#promoBar").innerHTML=live.map(p=>`<div class="promo"><span class="tag">${p.kind==="percent"?esc(p.value)+"% off":fmt(p.value)+" off"}</span><span>${esc(p.banner||p.title)}</span>${p.end?`<small>until ${esc(new Date(p.end+"T12:00:00").toLocaleDateString("en-US",{month:"short",day:"numeric"}))}</small>`:""}</div>`).join("");
+}
+function renderChips(){
+  const cats=["All",...D.shop.categories.filter(c=>D.products.some(p=>!p.hidden&&p.category===c))];
+  if(!cats.includes(filter.cat))filter.cat="All";
+  $("#chips").innerHTML=cats.map(c=>`<button class="chip" type="button" data-cat="${esc(c)}" aria-pressed="${c===filter.cat}">${esc(c)}</button>`).join("");
+}
+function priceHTML(p){const pr=priceOf(p);return pr.promo?`<span class="price on-sale"><s>${fmt(pr.base)}</s><b>${fmt(pr.sale)}</b></span>`:`<span class="price">${fmt(pr.base)}</span>`}
+function renderGrid(){
+  const q=filter.q.trim().toLowerCase();
+  let list=D.products.filter(p=>!p.hidden&&(filter.cat==="All"||p.category===filter.cat)&&(!q||(p.name+" "+p.description+" "+p.category+" "+p.colors).toLowerCase().includes(q)));
+  list.sort((a,b)=>(b.featured-a.featured)||((a.stock===0&&!a.madeToOrder)-(b.stock===0&&!b.madeToOrder))||String(b.createdAt).localeCompare(a.createdAt));
+  if(!list.length){$("#grid").innerHTML=`<div class="empty"><div class="hand">${D.products.length?"Nothing matches that yet":"New creations are on the print bed!"}</div><div>${D.products.length?"Try another word or category.":"Check back soon."}</div></div>`;return}
+  $("#grid").innerHTML=list.map(p=>{const st=stockInfo(p),pr=priceOf(p);
+    return `<button class="card" type="button" data-open="${esc(p.id)}">
+      <span class="thumb">${media(p.photos[0],p.name)}<span class="badges">${pr.promo?`<span class="badge sale">Sale</span>`:""}${isNew(p)?`<span class="badge new">New</span>`:""}${p.example?`<span class="badge sample">Sample</span>`:""}${p.video?`<span class="badge vid">▶ Video</span>`:""}</span></span>
+      <span class="card-body"><span class="cat">${esc(p.category)}</span><h3>${esc(p.name)}</h3>
+      <span class="row">${priceHTML(p)}<span class="stock ${st.cls}">${st.txt}</span></span></span></button>`}).join("");
+}
+function renderReels(){
+  const list=(D.reels||[]).filter(x=>x.video).slice(0,2),box=$("#reels");
+  box.hidden=!list.length;if(!list.length){box.innerHTML="";return}
+  const ig=(D.shop.instagram||"").replace(/^@/,"");
+  box.innerHTML=`<div class="reels-head"><h2>Latest from Instagram</h2><span class="hand">see what's on the printer</span></div><div class="reel-grid">${list.map(x=>`<div class="reel"><video src="${blob(x.video)}" muted autoplay loop playsinline preload="metadata" aria-label="${esc(x.caption||"Instagram video")}"></video>${x.caption?`<p>${esc(x.caption)}</p>`:""}<a href="${esc(safeIg(x.url)||"https://www.instagram.com/"+encodeURIComponent(ig)+"/")}" target="_blank" rel="noopener">Watch on Instagram →</a></div>`).join("")}</div>`;
+}
+function safeIg(u){u=String(u||"").trim();if(!u)return"";if(!/^https?:\/\//i.test(u))u="https://"+u;try{const x=new URL(u);return /(^|\.)instagram\.com$/i.test(x.hostname)?x.href:""}catch(e){return""}}
+function renderGallery(){
+  const list=(D.gallery||[]).filter(g=>g.photo).slice(0,8),box=$("#gallery");
+  box.hidden=!list.length;if(!list.length){box.innerHTML="";return}
+  box.innerHTML=`<div class="gal-head"><h2>Happy customers</h2><span class="hand">thank you for sharing!</span></div><div class="gal-grid">${list.map(g=>{const pr=D.products.find(p=>p.id===g.productId);
+    return `<button class="polaroid" type="button" data-gal="${esc(g.id)}"><span class="pic">${media(g.photo,(g.name?g.name+" with ":"")+(pr?pr.name:"a Big Ideas creation"))}</span>${g.name?`<span class="who">${esc(g.name)}</span>`:""}<span class="what">${esc(g.caption||(pr?pr.name:""))}</span></button>`}).join("")}</div>`;
+}
+function openGallery(id){
+  const g=(D.gallery||[]).find(x=>x.id===id);if(!g)return;const pr=D.products.find(p=>p.id===g.productId&&!p.hidden);
+  const s=openScrim(`${X}<div class="gal-view"><img src="${blob(g.photo)}" alt="${esc(g.caption||g.name||"Customer photo")}"><div>${g.name?`<b>${esc(g.name)}</b>`:""} ${g.caption?`<span class="help">${esc(g.caption)}</span>`:""}</div>${pr?`<div><button class="btn primary sm" type="button" data-see="${esc(pr.id)}">See ${esc(pr.name)}</button></div>`:""}</div>`);
+  s.firstElementChild.style.width="min(640px,100%)";
+  s.addEventListener("click",e=>{if(e.target.closest("[data-close]"))closeTop();const b=e.target.closest("[data-see]");if(b){closeTop();openProduct(b.dataset.see)}});
+}
+function renderShop(){bind();renderPromos();renderReels();renderGallery();renderChips();renderGrid();updateListCount()}
+
+/* ---------- product detail ---------- */
+let scrimStack=[];
+function openScrim(html,cls="modal"){
+  const s=document.createElement("div");s.className="scrim";s.innerHTML=`<div class="${cls}" role="dialog" aria-modal="true">${html}</div>`;
+  s.addEventListener("click",e=>{if(e.target===s)closeTop()});document.body.appendChild(s);scrimStack.push(s);document.body.style.overflow="hidden";
+  return s;
+}
+function closeTop(){const s=scrimStack.pop();if(s)s.remove();if(!scrimStack.length)document.body.style.overflow=""}
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&scrimStack.length)closeTop()});
+const X=`<button class="x" type="button" data-close aria-label="Close"><svg class="i" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>`;
+
+function openProduct(id){
+  const p=D.products.find(x=>x.id===id);if(!p)return;
+  const items=[...p.photos.filter(Boolean).map(a=>({t:"img",id:a})),...(p.video?[{t:"vid",id:p.video}]:[])];
+  const st=stockInfo(p),pr=priceOf(p);
+  const s=openScrim(`${X}<div class="detail">
+    <div class="gallery"><div class="stage" id="stage"></div>
+      ${items.length>1?`<div class="thumbs">${items.map((m,i)=>`<button type="button" data-i="${i}" aria-label="${m.t==="vid"?"Play video":"Photo "+(i+1)}" aria-current="${i===0}">${m.t==="img"?`<img src="${blob(m.id)}" alt="">`:`<svg class="i" viewBox="0 0 24 24" style="width:26px;height:26px"><path d="M7 4v16l13-8z"/></svg>`}</button>`).join("")}</div>`:""}</div>
+    <div class="info"><span class="cat">${esc(p.category)}${p.example?" · sample item":""}</span><h2>${esc(p.name)}</h2>
+      <div>${priceHTML(p)} ${pr.promo?`<span class="help">· ${esc(pr.promo.banner||pr.promo.title)}</span>`:""}</div>
+      <div class="stock ${st.cls}">${st.txt}</div>
+      <div class="desc">${esc(p.description)}</div>
+      <div class="specs">${p.size?`<span class="spec"><span>Size</span>${esc(p.size)}</span>`:""}${p.colors?`<span class="spec"><span>Colors</span>${esc(p.colors)}</span>`:""}${p.printHours?`<span class="spec"><span>Print time</span>${esc(p.printHours)} h</span>`:""}</div>
+      <div class="actions"><button class="btn primary" type="button" data-add="${esc(p.id)}" ${st.cls==="out"?"disabled":""}>${st.cls==="out"?"Sold out":"Add to my list"}</button>
+      <a class="btn ghost" href="https://www.instagram.com/${encodeURIComponent((D.shop.instagram||"").replace(/^@/,""))}/" target="_blank" rel="noopener">Ask on Instagram</a></div>
+      <div class="help">${esc(D.shop.contactNote||"")}</div></div></div>`);
+  const show=i=>{const m=items[i],stage=$("#stage",s);
+    stage.innerHTML=!m?`<div class="ph">${BULB}</div>`:m.t==="img"?`<img src="${blob(m.id)}" alt="${esc(p.name)}">`:`<video src="${blob(m.id)}" controls playsinline preload="metadata"></video>`;
+    $$(".thumbs button",s).forEach(b=>b.setAttribute("aria-current",String(+b.dataset.i===i)))};
+  show(0);
+  s.addEventListener("click",e=>{const t=e.target.closest("[data-i]");if(t)show(+t.dataset.i);
+    if(e.target.closest("[data-close]"))closeTop();
+    const a=e.target.closest("[data-add]");if(a){addToList(a.dataset.add);a.textContent="Added ✓";}});
+}
+
+/* ---------- my list ---------- */
+let myList=ls.get("bi-list")||{};
+function saveList(){ls.set("bi-list",myList);updateListCount()}
+function updateListCount(){const n=Object.entries(myList).filter(([id])=>D.products.some(p=>p.id===id)).reduce((a,[,q])=>a+q,0);$("#listCount").textContent=n}
+function addToList(id){myList[id]=(myList[id]||0)+1;saveList();toast("Added to your list")}
+function listMessage(){
+  const rows=Object.entries(myList).map(([id,q])=>({p:D.products.find(x=>x.id===id),q})).filter(r=>r.p);
+  const total=rows.reduce((a,r)=>a+priceOf(r.p).sale*r.q,0);
+  return {rows,total,text:`Hi ${D.shop.name}! I'd like to order:\n`+rows.map(r=>`• ${r.q} × ${r.p.name} (${fmt(priceOf(r.p).sale)} each)`).join("\n")+`\nTotal: ${fmt(total)}\nThank you!`};
+}
+function openList(){
+  const s=openScrim("",'sheet');const box=s.firstElementChild;
+  const draw=()=>{const m=listMessage();
+    box.innerHTML=`${X}<h2>My list</h2>${m.rows.length?m.rows.map(r=>`<div class="li"><div class="mini">${media(r.p.photos[0],r.p.name)}</div><div><b>${esc(r.p.name)}</b><div class="help">${fmt(priceOf(r.p).sale)} each</div></div>
+      <div class="qty"><button type="button" data-dec="${esc(r.p.id)}" aria-label="One less">−</button><span>${r.q}</span><button type="button" data-inc="${esc(r.p.id)}" aria-label="One more">+</button></div></div>`).join("")+
+      `<div class="total"><span>Estimated total</span><span>${fmt(m.total)}</span></div>
+      <label class="f" for="msg">Your order message<textarea class="copybox" id="msg" readonly>${esc(m.text)}</textarea></label>
+      <div class="actions"><button class="btn primary" type="button" id="copyMsg">Copy message</button><a class="btn ghost" target="_blank" rel="noopener" href="https://ig.me/m/${encodeURIComponent((D.shop.instagram||"").replace(/^@/,""))}">Open Instagram DM</a></div>
+      <div class="help">Copy the message, then paste it in a DM. ${esc(D.shop.contactNote||"")}</div>`
+      :`<div class="empty"><div class="hand">Your list is empty</div><div>Tap a product and choose “Add to my list”.</div></div>`}`;};
+  draw();
+  box.addEventListener("click",async e=>{
+    if(e.target.closest("[data-close]"))return closeTop();
+    const inc=e.target.closest("[data-inc]"),dec=e.target.closest("[data-dec]");
+    if(inc){myList[inc.dataset.inc]++;saveList();draw()}
+    if(dec){const k=dec.dataset.dec;myList[k]--;if(myList[k]<=0)delete myList[k];saveList();draw()}
+    if(e.target.id==="copyMsg"){const ta=$("#msg",box);try{await navigator.clipboard.writeText(ta.value);toast("Message copied")}catch(err){ta.focus();ta.select();toast("Selected — press copy")}}
+  });
+}
+
+/* ---------- request card (photo + request in one image) ---------- */
+let refURL=null;
+function loadImg(src){return new Promise((res,rej)=>{const i=new Image();i.onload=()=>res(i);i.onerror=rej;i.src=src})}
+async function buildCard(lines){
+  if(!refURL)return null;
+  try{
+    const W=1080,H=1350,c=document.createElement("canvas");c.width=W;c.height=H;const x=c.getContext("2d");
+    x.fillStyle="#fbf2ef";x.fillRect(0,0,W,H);
+    for(let y=0;y<H;y+=16){x.fillStyle="rgba(201,138,142,.10)";x.fillRect(0,y,W,2)}
+    const img=await loadImg(refURL);const ph=720,pw=W-96;
+    const sc=Math.max(pw/img.width,ph/img.height),sw=pw/sc,sh=ph/sc;
+    x.save();x.beginPath();x.roundRect?x.roundRect(48,150,pw,ph,36):x.rect(48,150,pw,ph);x.clip();
+    x.drawImage(img,(img.width-sw)/2,(img.height-sh)/2,sw,sh,48,150,pw,ph);x.restore();
+    try{const m=getComputedStyle(document.documentElement).getPropertyValue("--logo").match(/url\(["']?(data:[^"')]+)/);if(m){const lg=await loadImg(m[1]);x.save();x.beginPath();x.arc(108,78,54,0,7);x.clip();x.drawImage(lg,54,24,108,108);x.restore()}}catch(e){}
+    x.fillStyle="#a0555f";x.font="600 46px 'Young Serif',Georgia,serif";x.fillText(D.shop.name||"",184,92);
+    x.fillStyle="#4f3238";x.font="700 34px Nunito,system-ui,sans-serif";x.fillText("Custom request",48,930);
+    x.font="500 29px Nunito,system-ui,sans-serif";
+    let y=982;const maxW=W-96;
+    for(const ln of lines.slice(1,-1)){let words=ln.split(" "),cur="";
+      for(const w of words){const test=cur?cur+" "+w:w;if(x.measureText(test).width>maxW&&cur){x.fillText(cur,48,y);y+=40;cur="  "+w}else cur=test}
+      if(cur){x.fillText(cur,48,y);y+=40} if(y>H-40)break}
+    return c.toDataURL("image/jpeg",.88);
+  }catch(e){return null}
+}
+
+/* ---------- toast ---------- */
+let tt;function toast(m){let t=$(".toast");if(!t){t=document.createElement("div");t.className="toast";t.setAttribute("role","status");document.body.appendChild(t)}t.textContent=m;clearTimeout(tt);tt=setTimeout(()=>t.remove(),2600)}
+
+/* ================= ADMIN ================= */
+const T={
+ es:{admin:"Admin",title:"Panel de la tienda",unsaved:"Cambios sin publicar",saved:"Todo publicado",publish:"Publicar cambios",publishing:"Publicando…",products:"Productos",promos:"Promociones",shop:"Tienda",add:"Nuevo producto",photo:"Foto",video:"Video",name:"Nombre",cat:"Categoría",price:"Precio (USD)",stock:"Stock",visible:"Visible",edit:"Editar",del:"Borrar",sure:"¿Seguro?",yes:"Sí, borrar",no:"No",desc:"Descripción",colors:"Colores",size:"Tamaño",hours:"Horas de impresión",mto:"Se hace por encargo (cuando no hay stock)",featured:"Destacado (aparece primero)",hidden:"Ocultar de la tienda",save:"Guardar",cancel:"Cancelar",photos:"3 fotos y 1 video",photosHelp:"La foto 1 es la portada. El video puede ser directo del iPhone: si hace falta, la página lo adapta antes de subirlo (máx. 60 segundos).",vidPrep:"Este video hay que adaptarlo para que se vea en cualquier celular o compu. Tarda lo mismo que dura el video (unos {s} s). Dejá la pantalla prendida y esta página abierta.",vidGo:"Preparar y subir video",vidConv:"Adaptando video…",vidLong:"El video dura más de 60 s: se va a usar el primer minuto.",vidCant:"Este navegador no puede abrir ese video. Probá subiéndolo desde el iPhone (Safari) o desde la app de Claude.",vidNoRec:"Este navegador no puede adaptar videos. Probá desde el iPhone con Safari.",vidFail:"No se pudo adaptar el video. Probá con uno más corto.",uploading:"Subiendo…",remove:"Quitar",newPromo:"Nueva promoción",ptitle:"Nombre interno",banner:"Texto del cartel",kind:"Tipo",pct:"% de descuento",amt:"US$ de descuento",value:"Valor",scope:"Aplica a",sAll:"Toda la tienda",sCat:"Una categoría",sProd:"Productos elegidos",start:"Desde",end:"Hasta",active:"Activa",live:"En curso",off:"Apagada",soon:"Programada",ended:"Terminada",shopName:"Nombre de la tienda",tagline:"Frase corta",heroTitle:"Título principal",about:"Texto de presentación",heroNote:"Nota escrita a mano",city:"Ciudad",ig:"Usuario de Instagram",contact:"Nota sobre pedidos",cats:"Categorías (separadas por coma)",newDays:"Días que un producto cuenta como “Nuevo”",storage:"Espacio de fotos y videos",clean:"Borrar archivos que no usa ningún producto",cleaned:"Archivos sin uso borrados",lang:"English",sample:"Ejemplo",noPub:"No se puede publicar desde esta vista.",published:"¡Publicado! La tienda ya está actualizada.",needName:"Poné un nombre al producto.",tooBig:"El video pesa más de 20 MB. Probá uno más corto.",badType:"Ese formato no se puede subir. Usá JPG/PNG/WEBP para fotos y MP4/WEBM para video.",upErr:"No se pudo subir el archivo",noAssets:"Subir archivos solo funciona para quien puede editar la página.",restored:"Recuperé tus cambios sin publicar.",empty:"Todavía no hay productos. Tocá “Nuevo producto” para cargar el primero.",noPromos:"No hay promociones. Creá una para mostrar un cartel y precios rebajados.",conflict:"Alguien publicó otra versión recién; la página se recarga con esa.",inv:"Inventario total",units:"unidades",value2:"valor",reels:"Instagram",newReel:"Agregar video de Instagram",reelsHelp:"En la tienda se muestran los 2 más nuevos. Subí el mismo video que publicaste y pegá el link del reel.",reelUrl:"Link del reel (instagram.com/reel/…)",caption:"Texto corto (opcional)",reelFile:"Video",needVid:"Elegí el video para subir.",badUrl:"Ese link no es de Instagram.",noReels:"Todavía no hay videos de Instagram.",shown:"Se muestra",ghTitle:"Entrar como admin",ghHelp:"Necesitás una clave de GitHub (fine-grained token) con permiso “Contents: Read and write” solo para este repositorio. Se guarda únicamente en este dispositivo.",ghOwner:"Usuario de GitHub",ghRepo:"Repositorio",ghBranch:"Rama",ghToken:"Clave (token)",ghGo:"Entrar",ghBad:"No se pudo entrar: revisá usuario, repositorio y que la clave tenga permiso de escritura.",ghOut:"Salir del admin",ghPub:"¡Publicado! La web se actualiza en 1 o 2 minutos.",cTitle:"Título de “pedidos especiales”",gal:"Clientes",newGal:"Agregar foto de cliente",galHelp:"La tienda muestra las 8 más nuevas. Usá solo nombre de pila o inicial, nunca apellido ni lugar. Si aparece un menor, mejor que no se vea la cara.",gName:"Nombre a mostrar (ej. Emma R.)",gCap:"Texto corto (ej. ¡Le encantó su dragón!)",gProd:"Producto (opcional)",gNone:"— ninguno —",gConsent:"La persona me dio permiso para publicar esta foto",needConsent:"Marcá que tenés permiso para publicarla.",needPhoto:"Elegí la foto.",noGal:"Todavía no hay fotos de clientes.",cText:"Texto de “pedidos especiales”"},
+ en:{admin:"Admin",title:"Shop panel",unsaved:"Unpublished changes",saved:"Everything is published",publish:"Publish changes",publishing:"Publishing…",products:"Products",promos:"Deals",shop:"Shop",add:"New product",photo:"Photo",video:"Video",name:"Name",cat:"Category",price:"Price (USD)",stock:"Stock",visible:"Visible",edit:"Edit",del:"Delete",sure:"Sure?",yes:"Yes, delete",no:"No",desc:"Description",colors:"Colors",size:"Size",hours:"Print hours",mto:"Made to order (when out of stock)",featured:"Featured (shows first)",hidden:"Hide from shop",save:"Save",cancel:"Cancel",photos:"3 photos and 1 video",photosHelp:"Photo 1 is the cover. Videos can come straight from an iPhone: the page adapts them before uploading if needed (max 60 seconds).",vidPrep:"This video needs adapting so it plays on any phone or computer. It takes about as long as the video (about {s} s). Keep the screen on and this page open.",vidGo:"Prepare and upload video",vidConv:"Adapting video…",vidLong:"The video is longer than 60 s: only the first minute will be used.",vidCant:"This browser can't open that video. Try uploading from the iPhone (Safari) or the Claude app.",vidNoRec:"This browser can't adapt videos. Try from an iPhone with Safari.",vidFail:"Couldn't adapt the video. Try a shorter one.",uploading:"Uploading…",remove:"Remove",newPromo:"New deal",ptitle:"Internal name",banner:"Banner text",kind:"Type",pct:"% off",amt:"US$ off",value:"Value",scope:"Applies to",sAll:"Whole shop",sCat:"One category",sProd:"Chosen products",start:"From",end:"Until",active:"Active",live:"Live",off:"Off",soon:"Scheduled",ended:"Ended",shopName:"Shop name",tagline:"Short tagline",heroTitle:"Main title",about:"Intro text",heroNote:"Handwritten note",city:"City",ig:"Instagram username",contact:"Ordering note",cats:"Categories (comma separated)",newDays:"Days a product counts as “New”",storage:"Photo & video storage",clean:"Delete files no product uses",cleaned:"Unused files deleted",lang:"Español",sample:"Sample",noPub:"Publishing isn't available in this view.",published:"Published! The shop is up to date.",needName:"Give the product a name.",tooBig:"The video is over 20 MB. Try a shorter one.",badType:"That format can't be uploaded. Use JPG/PNG/WEBP photos and MP4/WEBM video.",upErr:"Couldn't upload the file",noAssets:"Uploading works only for people who can edit this page.",restored:"Restored your unpublished changes.",empty:"No products yet. Tap “New product” to add the first one.",noPromos:"No deals yet. Create one to show a banner and sale prices.",conflict:"Someone just published another version; the page is reloading to it.",inv:"Total inventory",units:"units",value2:"value",reels:"Instagram",newReel:"Add Instagram video",reelsHelp:"The shop shows the 2 newest. Upload the same video you posted and paste the reel link.",reelUrl:"Reel link (instagram.com/reel/…)",caption:"Short caption (optional)",reelFile:"Video",needVid:"Choose the video to upload.",badUrl:"That link isn't an Instagram link.",noReels:"No Instagram videos yet.",shown:"Shown",ghTitle:"Admin sign-in",ghHelp:"You need a GitHub fine-grained token with “Contents: Read and write” for this repository only. It is stored only on this device.",ghOwner:"GitHub user",ghRepo:"Repository",ghBranch:"Branch",ghToken:"Token",ghGo:"Sign in",ghBad:"Couldn't sign in: check user, repository and that the token can write.",ghOut:"Sign out of admin",ghPub:"Published! The site updates in 1–2 minutes.",cTitle:"“Custom requests” title",gal:"Customers",newGal:"Add customer photo",galHelp:"The shop shows the 8 newest. Use first name or initial only, never a last name or place. If a child appears, better not to show their face.",gName:"Name to show (e.g. Emma R.)",gCap:"Short caption (e.g. She loved her dragon!)",gProd:"Product (optional)",gNone:"— none —",gConsent:"This person gave me permission to post this photo",needConsent:"Check that you have permission to post it.",needPhoto:"Choose the photo.",noGal:"No customer photos yet.",cText:"“Custom requests” text"}
+};
+const t=k=>(T[lang]||T.es)[k]||k;
+let adminTab="products";
+
+function markDirty(){dirty=true;ls.set("bi-draft",{base:SAVED.rev,data:D});renderShop();const d=$("#dirtyFlag");if(d){d.textContent=t("unsaved");d.className="dirty"}const pb=$("#pubBtn");if(pb)pb.disabled=false}
+
+function openAdmin(){
+  const s=openScrim("","admin-wrap");const box=s.firstElementChild;box.id="adminBox";
+  drawAdmin();
+  box.addEventListener("click",adminClick);
+  box.addEventListener("change",adminChange);
+}
+function drawAdmin(){
+  const box=$("#adminBox");if(!box)return;
+  box.innerHTML=`<div class="admin-head"><h2>${t("title")}</h2><span id="dirtyFlag" class="${dirty?"dirty":"help"}">${dirty?t("unsaved"):t("saved")}</span>
+    <button class="btn ghost sm" type="button" data-lang>${t("lang")}</button>
+    <button class="btn primary sm" type="button" id="pubBtn" ${dirty?"":"disabled"}>${t("publish")}</button>
+    <button class="btn ghost sm" type="button" data-signout>${t("ghOut")}</button>
+    <button class="btn soft sm" type="button" data-close aria-label="Close">✕</button></div>
+  <div class="tabs" role="tablist">${["products","promos","reels","gal","shop"].map(k=>`<button class="tab" role="tab" type="button" data-tab="${k}" aria-selected="${adminTab===k}">${t(k)}</button>`).join("")}</div>
+  <div class="panel" id="panel"></div>`;
+  drawPanel();
+}
+function drawPanel(){
+  const P=$("#panel");if(!P)return;
+  if(adminTab==="products"){
+    const units=D.products.reduce((a,p)=>a+(+p.stock||0),0),val=D.products.reduce((a,p)=>a+(+p.stock||0)*p.price,0);
+    P.innerHTML=`<div class="actions" style="justify-content:space-between;align-items:center"><span class="help">${t("inv")}: <b>${units}</b> ${t("units")} · ${t("value2")} <b>${fmt(val)}</b></span><button class="btn primary sm" type="button" data-new>+ ${t("add")}</button></div>
+    ${D.products.length?`<div class="tbl"><table><thead><tr><th></th><th>${t("name")}</th><th>${t("cat")}</th><th>${t("price")}</th><th>${t("stock")}</th><th>${t("visible")}</th><th></th></tr></thead><tbody>
+    ${D.products.map(p=>`<tr data-id="${esc(p.id)}"><td><div class="mini-th">${media(p.photos[0],"")}</div></td>
+      <td><b>${esc(p.name)}</b>${p.example?` <span class="badge sample">${t("sample")}</span>`:""}${priceOf(p).promo?` <span class="badge sale">${fmt(priceOf(p).sale)}</span>`:""}</td>
+      <td>${esc(p.category)}</td>
+      <td class="num"><input class="in" type="number" min="0" step="0.5" id="price-${esc(p.id)}" data-f="price" value="${p.price}" aria-label="${t("price")}"></td>
+      <td><span class="stepper"><button type="button" data-step="-1" aria-label="−1">−</button><input class="in" type="number" min="0" step="1" id="stock-${esc(p.id)}" data-f="stock" value="${p.stock}" aria-label="${t("stock")}"><button type="button" data-step="1" aria-label="+1">+</button></span></td>
+      <td><input type="checkbox" class="check" data-f="visible" id="vis-${esc(p.id)}" ${p.hidden?"":"checked"} aria-label="${t("visible")}"></td>
+      <td style="white-space:nowrap"><button class="btn soft sm" type="button" data-edit>${t("edit")}</button> <span class="confirm" data-delwrap><button class="btn ghost sm" type="button" data-del>${t("del")}</button></span></td></tr>`).join("")}
+    </tbody></table></div>`:`<div class="empty">${t("empty")}</div>`}`;
+  } else if(adminTab==="promos"){
+    const st=p=>{const d=today();if(!p.active)return["off",t("off")];if(p.end&&p.end<d)return["off",t("ended")];if(p.start&&p.start>d)return["soon",t("soon")];return["live",t("live")]};
+    P.innerHTML=`<div class="actions" style="justify-content:flex-end"><button class="btn primary sm" type="button" data-newpromo>+ ${t("newPromo")}</button></div>
+    ${D.promos.length?D.promos.map(p=>{const [c,l]=st(p);return `<div class="promo-card" data-pid="${esc(p.id)}"><span class="state ${c}">${l}</span><div class="grow"><b>${esc(p.title)}</b>${p.example?` <span class="badge sample">${t("sample")}</span>`:""}<div class="help">${p.kind==="percent"?esc(p.value)+"%":fmt(p.value)} · ${p.scope==="all"?t("sAll"):p.scope==="category"?esc(p.category):(p.productIds||[]).length+" "+t("products").toLowerCase()} · ${esc(p.start||"…")} → ${esc(p.end||"…")}</div></div>
+      <label class="check"><input type="checkbox" data-pactive ${p.active?"checked":""}>${t("active")}</label><button class="btn soft sm" type="button" data-editpromo>${t("edit")}</button> <span class="confirm" data-delwrap><button class="btn ghost sm" type="button" data-delpromo>${t("del")}</button></span></div>`}).join(""):`<div class="empty">${t("noPromos")}</div>`}`;
+  } else if(adminTab==="gal"){
+    const G=D.gallery||[];
+    P.innerHTML=`<div class="actions" style="justify-content:space-between;align-items:center"><span class="help" style="max-width:60ch">${t("galHelp")}</span><button class="btn primary sm" type="button" data-newgal ${assetsApi?"":"disabled"}>+ ${t("newGal")}</button></div>
+    ${G.length?G.map((g,i)=>{const pr=D.products.find(p=>p.id===g.productId);return `<div class="reel-row" data-gid="${esc(g.id)}"><div class="mini-th" style="width:64px;height:64px">${media(g.photo,"")}</div><div style="min-width:0"><b>${esc(g.name||"—")}</b>${i<8?` <span class="state live">${t("shown")}</span>`:""}<div class="help" style="overflow-wrap:anywhere">${esc(g.caption||"")}${pr?" · "+esc(pr.name):""} · ${esc(g.date||"")}</div></div><span class="confirm" data-delwrap><button class="btn ghost sm" type="button" data-delgal>${t("del")}</button></span></div>`}).join(""):`<div class="empty">${t("noGal")}</div>`}`;
+  } else if(adminTab==="reels"){
+    const R=D.reels||[];
+    P.innerHTML=`<div class="actions" style="justify-content:space-between;align-items:center"><span class="help">${t("reelsHelp")}</span><button class="btn primary sm" type="button" data-newreel ${assetsApi?"":"disabled"}>+ ${t("newReel")}</button></div>
+    ${R.length?R.map((x,i)=>`<div class="reel-row" data-rid="${esc(x.id)}"><video src="${blob(x.video)}" muted playsinline preload="metadata"></video><div style="min-width:0"><b>${esc(x.caption||x.url||"—")}</b>${i<2?` <span class="state live">${t("shown")}</span>`:""}<div class="help" style="overflow-wrap:anywhere">${esc(x.url||"")} · ${esc(x.date||"")}</div></div><span class="confirm" data-delwrap><button class="btn ghost sm" type="button" data-delreel>${t("del")}</button></span></div>`).join(""):`<div class="empty">${t("noReels")}</div>`}`;
+  } else {
+    const s=D.shop;
+    P.innerHTML=`<form class="form" id="shopForm">
+      <label class="f">${t("shopName")}<input class="in" id="s-name" name="name" value="${esc(s.name)}"></label>
+      <label class="f">${t("tagline")}<input class="in" id="s-tagline" name="tagline" value="${esc(s.tagline)}"></label>
+      <label class="f full">${t("heroTitle")}<input class="in" id="s-hero" name="heroTitle" value="${esc(s.heroTitle)}"></label>
+      <label class="f full">${t("about")}<textarea class="in" id="s-about" name="about">${esc(s.about)}</textarea></label>
+      <label class="f">${t("heroNote")}<input class="in" id="s-note" name="heroNote" value="${esc(s.heroNote)}"></label>
+      <label class="f">${t("city")}<input class="in" id="s-city" name="city" value="${esc(s.city)}"></label>
+      <label class="f">${t("ig")}<input class="in" id="s-ig" name="instagram" value="${esc(s.instagram)}"></label>
+      <label class="f">${t("newDays")}<input class="in" id="s-days" type="number" min="0" name="newDays" value="${esc(s.newDays)}"></label>
+      <label class="f full">${t("contact")}<input class="in" id="s-contact" name="contactNote" value="${esc(s.contactNote)}"></label>
+      <label class="f">${t("cTitle")}<input class="in" id="s-ctitle" name="customTitle" value="${esc(s.customTitle||"Dream it, we print it")}"></label>
+      <label class="f full">${t("cText")}<textarea class="in" id="s-ctext" name="customText">${esc(s.customText||"Looking for something that isn't in the shop? Tell us your idea and we'll try to design and 3D print it just for you.")}</textarea></label>
+      <label class="f full">${t("cats")}<input class="in" id="s-cats" name="categories" value="${esc(s.categories.join(", "))}"></label>
+      </form>
+      <div class="full" style="display:grid;gap:8px;border-top:1.5px dashed var(--line);padding-top:14px"><b>${t("storage")}</b><div id="usage" class="help">…</div><div class="meter"><i id="usageBar" style="width:0"></i></div>
+      <div><button class="btn ghost sm" type="button" data-clean ${assetsApi?"":"disabled"}>${t("clean")}</button></div></div>`;
+    loadUsage();
+  }
+}
+async function loadUsage(){
+  if(!assetsApi){const u=$("#usage");if(u)u.textContent=t("noAssets");return}
+  try{const r=await assetsApi.list();const u=r.usage;const mb=b=>(b/1048576).toFixed(1)+" MB";
+    $("#usage").textContent=`${u.files} / ${u.maxFiles} · ${mb(u.bytes)} / ${mb(u.maxBytes)}`;$("#usageBar").style.width=Math.min(100,u.bytes/u.maxBytes*100)+"%";return r}catch(e){$("#usage").textContent=t("upErr")}
+}
+function usedIds(data){const s=new Set();for(const p of data.products){p.photos.forEach(x=>x&&s.add(x));p.video&&s.add(p.video)}for(const x of (data.reels||[]))x.video&&s.add(x.video);for(const g of (data.gallery||[]))g.photo&&s.add(g.photo);return s}
+async function cleanAssets(){
+  if(!assetsApi)return;const keep=new Set([...usedIds(D),...usedIds(SAVED)]);
+  try{const r=await assetsApi.list();let n=0;for(const a of r.assets){if(!keep.has(a.id)){await assetsApi.delete(a.id);n++}}toast(t("cleaned")+": "+n);loadUsage()}catch(e){toast(t("upErr"))}
+}
+function confirmDel(btn,onYes){
+  const w=btn.closest("[data-delwrap]");w.innerHTML=`<b>${t("sure")}</b><button class="btn danger sm" type="button" data-yes>${t("yes")}</button><button class="btn ghost sm" type="button" data-no>${t("no")}</button>`;
+  w.querySelector("[data-yes]").onclick=e=>{e.stopPropagation();onYes()};w.querySelector("[data-no]").onclick=e=>{e.stopPropagation();drawPanel()};
+}
+function adminClick(e){
+  const el=e.target;
+  if(el.closest("[data-close]"))return closeTop();
+  if(el.closest("[data-lang]")){lang=lang==="es"?"en":"es";ls.set("bi-lang",lang);$("#adminLabel").textContent=t("admin");return drawAdmin()}
+  if(el.closest("#pubBtn"))return publish();
+  if(el.closest("[data-signout]")){ls.del("bi-gh");location.hash="";location.reload();return}
+  const tab=el.closest("[data-tab]");if(tab){adminTab=tab.dataset.tab;return drawAdmin()}
+  if(el.closest("[data-new]"))return editProduct(null);
+  if(el.closest("[data-newpromo]"))return editPromo(null);
+  if(el.closest("[data-newreel]"))return editReel();
+  if(el.closest("[data-newgal]"))return editGal();
+  const gr=el.closest("[data-gid]");if(gr&&el.closest("[data-delgal]"))return confirmDel(el.closest("[data-delgal]"),()=>{D.gallery=(D.gallery||[]).filter(x=>x.id!==gr.dataset.gid);markDirty();drawPanel()});
+  const rr=el.closest("[data-rid]");if(rr&&el.closest("[data-delreel]"))return confirmDel(el.closest("[data-delreel]"),()=>{D.reels=(D.reels||[]).filter(x=>x.id!==rr.dataset.rid);markDirty();drawPanel()});
+  if(el.closest("[data-clean]"))return cleanAssets();
+  const row=el.closest("tr[data-id]");
+  if(row){const p=D.products.find(x=>x.id===row.dataset.id);
+    const step=el.closest("[data-step]");if(step){p.stock=Math.max(0,(+p.stock||0)+(+step.dataset.step));row.querySelector('[data-f="stock"]').value=p.stock;markDirty();return}
+    if(el.closest("[data-edit]"))return editProduct(p.id);
+    const d=el.closest("[data-del]");if(d)return confirmDel(d,()=>{D.products=D.products.filter(x=>x.id!==p.id);D.promos.forEach(pr=>pr.productIds=(pr.productIds||[]).filter(i=>i!==p.id));markDirty();drawPanel()});}
+  const pc=el.closest("[data-pid]");
+  if(pc){const pr=D.promos.find(x=>x.id===pc.dataset.pid);
+    if(el.closest("[data-editpromo]"))return editPromo(pr.id);
+    const d=el.closest("[data-delpromo]");if(d)return confirmDel(d,()=>{D.promos=D.promos.filter(x=>x.id!==pr.id);markDirty();drawPanel()});}
+}
+function adminChange(e){
+  const el=e.target;const row=el.closest("tr[data-id]");
+  if(row){const p=D.products.find(x=>x.id===row.dataset.id);const f=el.dataset.f;
+    if(f==="price")p.price=Math.max(0,Math.round((+el.value||0)*100)/100);
+    if(f==="stock")p.stock=Math.max(0,Math.floor(+el.value||0));
+    if(f==="visible")p.hidden=!el.checked;
+    markDirty();return}
+  if(el.matches("[data-pactive]")){const pr=D.promos.find(x=>x.id===el.closest("[data-pid]").dataset.pid);pr.active=el.checked;markDirty();return}
+  if(el.closest("#shopForm")){const s=D.shop,n=el.name;
+    if(n==="categories")s.categories=el.value.split(",").map(x=>x.trim()).filter(Boolean);
+    else if(n==="newDays")s.newDays=Math.max(0,+el.value||0);
+    else if(n==="instagram")s.instagram=el.value.trim().replace(/^@/,"");
+    else s[n]=el.value;
+    markDirty();}
+}
+
+/* ---------- product editor ---------- */
+function editProduct(id){
+  const orig=id?D.products.find(x=>x.id===id):null;
+  const p=orig?structuredClone(orig):{id:uid("p"),name:"",category:D.shop.categories[0]||"",price:0,stock:0,madeToOrder:false,description:"",colors:"",size:"",printHours:"",photos:[null,null,null],video:null,featured:false,hidden:false,example:false,createdAt:today()};
+  const s=openScrim("","sheet");const box=s.firstElementChild;box.style.width="min(760px,100%)";
+  const slots=()=>[0,1,2].map(i=>slotHTML("img",i,p.photos[i])).join("")+slotHTML("vid",3,p.video);
+  box.innerHTML=`${X}<h2>${orig?esc(orig.name):t("add")}</h2>
+  <form class="form" id="pf">
+    <label class="f full">${t("name")}<input class="in" id="pf-name" name="name" required value="${esc(p.name)}"></label>
+    <label class="f">${t("cat")}<select class="in" id="pf-cat" name="category">${[...new Set([...D.shop.categories,p.category].filter(Boolean))].map(c=>`<option ${c===p.category?"selected":""}>${esc(c)}</option>`).join("")}</select></label>
+    <label class="f">${t("price")}<input class="in" id="pf-price" name="price" type="number" min="0" step="0.5" value="${p.price}"></label>
+    <label class="f">${t("stock")}<input class="in" id="pf-stock" name="stock" type="number" min="0" step="1" value="${p.stock}"></label>
+    <label class="f">${t("hours")}<input class="in" id="pf-hours" name="printHours" value="${esc(p.printHours)}" placeholder="3"></label>
+    <label class="f">${t("size")}<input class="in" id="pf-size" name="size" value="${esc(p.size)}" placeholder="4 in"></label>
+    <label class="f">${t("colors")}<input class="in" id="pf-colors" name="colors" value="${esc(p.colors)}" placeholder="Pink, Mint"></label>
+    <label class="f full">${t("desc")}<textarea class="in" id="pf-desc" name="description">${esc(p.description)}</textarea></label>
+    <label class="check full"><input type="checkbox" id="pf-mto" name="madeToOrder" ${p.madeToOrder?"checked":""}>${t("mto")}</label>
+    <label class="check"><input type="checkbox" id="pf-feat" name="featured" ${p.featured?"checked":""}>${t("featured")}</label>
+    <label class="check"><input type="checkbox" id="pf-hid" name="hidden" ${p.hidden?"checked":""}>${t("hidden")}</label>
+    <div class="full" style="display:grid;gap:8px"><b>${t("photos")}</b><div class="slots" id="slots">${slots()}</div><div id="vidBox" hidden style="display:grid;gap:8px;border:1.5px dashed var(--line);border-radius:var(--r-md);padding:12px"></div><div class="help">${assetsApi?t("photosHelp"):t("noAssets")}</div></div>
+    <div class="actions full"><button class="btn primary" type="submit">${t("save")}</button><button class="btn ghost" type="button" data-close>${t("cancel")}</button></div>
+  </form>`;
+  const redrawSlots=()=>{$("#slots",box).innerHTML=slots()};
+  box.addEventListener("click",e=>{
+    if(e.target.closest("[data-close]"))return closeTop();
+    const rm=e.target.closest("[data-rm]");if(rm){const i=+rm.dataset.rm;if(i===3)p.video=null;else p.photos[i]=null;redrawSlots()}
+  });
+  box.addEventListener("change",async e=>{
+    const inp=e.target.closest("input[type=file]");if(!inp||!inp.files[0])return;
+    const i=+inp.dataset.slot,file=inp.files[0],slot=inp.closest(".slot");
+    if(!assetsApi){toast(t("noAssets"));return}
+    try{
+      let up=file,opts={};
+      if(i===3){ if(!file.type.startsWith("video/")&&!/\.(mov|mp4|m4v|webm|hevc)$/i.test(file.name)){toast(t("badType"));return}
+        const direct=/^video\/(mp4|webm)$/.test(file.type)&&file.size<=19.5*1048576;
+        if(!direct){inp.value="";return prepVideo(file,box,async b=>{const r=await assetsApi.upload(b,{type:b.type});p.video=r.id;redrawSlots()})} }
+      else { if(!file.type.startsWith("image/")){toast(t("badType"));return} up=await shrink(file); }
+      slot.classList.add("busy");slot.dataset.msg=t("uploading");
+      const r=await assetsApi.upload(up,opts);
+      if(i===3)p.video=r.id;else p.photos[i]=r.id;
+    }catch(err){toast(t(err&&err.code==="too_large"?"tooBig":err&&err.code==="unsupported_type"?"badType":"upErr"))}
+    redrawSlots();
+  });
+  $("#pf",box).addEventListener("submit",e=>{e.preventDefault();const f=e.target.elements;
+    const name=f.name.value.trim();if(!name){toast(t("needName"));f.name.focus();return}
+    Object.assign(p,{name,category:f.category.value,price:Math.max(0,Math.round((+f.price.value||0)*100)/100),stock:Math.max(0,Math.floor(+f.stock.value||0)),printHours:f.printHours.value.trim(),size:f.size.value.trim(),colors:f.colors.value.trim(),description:f.description.value.trim(),madeToOrder:f.madeToOrder.checked,featured:f.featured.checked,hidden:f.hidden.checked});
+    if(orig&&JSON.stringify(orig)!==JSON.stringify(p))p.example=false;
+    if(orig)Object.assign(orig,p);else D.products.unshift(p);
+    closeTop();markDirty();drawPanel();});
+}
+function slotHTML(kind,i,id){
+  const label=kind==="vid"?t("video"):t("photo")+" "+(i+1);
+  if(id)return `<div class="slot">${kind==="vid"?`<video src="${blob(id)}" muted playsinline preload="metadata"></video>`:`<img src="${blob(id)}" alt="${esc(label)}">`}<button class="rm" type="button" data-rm="${i}">${t("remove")}</button></div>`;
+  return `<div class="slot"><label for="up-${i}"><svg class="i" viewBox="0 0 24 24" style="width:26px;height:26px">${kind==="vid"?'<path d="M7 4v16l13-8z"/>':'<path d="M12 5v14M5 12h14"/>'}</svg>${label}</label><input id="up-${i}" type="file" data-slot="${i}" accept="${kind==="vid"?"video/*":"image/*"}" ${assetsApi?"":"disabled"}></div>`;
+}
+/* iPhone videos (.mov / HEVC / large) are re-encoded on the device: play → canvas → MediaRecorder (MP4 on Safari, WebM elsewhere) */
+const MAXS=60;
+function prepVideo(file,box,onBlob){
+  const vb=$("#vidBox",box);vb.hidden=false;
+  const url=URL.createObjectURL(file);
+  const v=document.createElement("video");v.playsInline=true;v.preload="auto";v.src=url;v.setAttribute("playsinline","");
+  v.style.cssText="width:100%;max-height:220px;border-radius:10px;background:#000";
+  vb.innerHTML=`<div class="help">…</div>`;
+  v.onerror=()=>{vb.innerHTML=`<div class="help">${t("vidCant")}</div>`};
+  v.onloadedmetadata=()=>{
+    const dur=Math.min(v.duration||0,MAXS);
+    vb.innerHTML="";vb.appendChild(v);
+    vb.insertAdjacentHTML("beforeend",`<div class="help">${t("vidPrep").replace("{s}",Math.ceil(dur))}${v.duration>MAXS?" "+t("vidLong"):""}</div><div class="meter"><i id="vidBar" style="width:0"></i></div><div class="actions"><button class="btn primary sm" type="button" id="vidGo">${t("vidGo")}</button><button class="btn ghost sm" type="button" id="vidX">${t("cancel")}</button></div>`);
+    $("#vidX",vb).onclick=()=>{try{v.pause()}catch(e){}URL.revokeObjectURL(url);vb.hidden=true;vb.innerHTML=""};
+    $("#vidGo",vb).onclick=()=>{
+      const go=$("#vidGo",vb);go.disabled=true;go.textContent=t("vidConv");$("#vidX",vb).disabled=true;
+      let lock=null;try{navigator.wakeLock&&navigator.wakeLock.request("screen").then(l=>lock=l).catch(()=>{})}catch(e){}
+      transcode(v,dur,f=>{const b=$("#vidBar",vb);if(b)b.style.width=Math.min(100,f*100).toFixed(1)+"%"})   // synchronous until play(): keeps the tap's permission to play sound
+        .then(async blob=>{if(blob.size>20*1048576)throw{code:"too_large"};go.textContent=t("uploading");await onBlob(blob);vb.hidden=true;vb.innerHTML=""})
+        .catch(err=>{toast(t(err&&err.code==="no_recorder"?"vidNoRec":err&&err.code==="too_large"?"tooBig":err&&err.code?"upErr":"vidFail"));go.disabled=false;go.textContent=t("vidGo");$("#vidX",vb).disabled=false})
+        .finally(()=>{try{lock&&lock.release()}catch(e){}URL.revokeObjectURL(url)});
+    };
+  };
+}
+function transcode(v,dur,onProg){
+  const types=["video/mp4;codecs=avc1.42E01E,mp4a.40.2","video/mp4;codecs=avc1","video/mp4","video/webm;codecs=vp9,opus","video/webm;codecs=vp8,opus","video/webm"];
+  const mime=window.MediaRecorder&&types.find(x=>{try{return MediaRecorder.isTypeSupported(x)}catch(e){return false}});
+  const c=document.createElement("canvas");
+  if(!mime||!c.captureStream)return Promise.reject({code:"no_recorder"});
+  const sc=Math.min(1,1280/Math.max(v.videoWidth,v.videoHeight)),ev=n=>Math.max(2,Math.round(n/2)*2);
+  c.width=ev(v.videoWidth*sc);c.height=ev(v.videoHeight*sc);
+  const ctx=c.getContext("2d"),stream=c.captureStream(30);
+  let ac=null;
+  try{const AC=window.AudioContext||window.webkitAudioContext;ac=new AC();const src=ac.createMediaElementSource(v),dst=ac.createMediaStreamDestination();src.connect(dst);dst.stream.getAudioTracks().forEach(tr=>stream.addTrack(tr))}catch(e){ac=null;v.muted=true}
+  const vbps=Math.max(700000,Math.min(2500000,Math.floor(17*1048576*8/Math.max(dur,1))-128000));
+  let rec;try{rec=new MediaRecorder(stream,{mimeType:mime,videoBitsPerSecond:vbps,audioBitsPerSecond:96000})}catch(e){return Promise.reject({code:"no_recorder"})}
+  const chunks=[];rec.ondataavailable=e=>{if(e.data&&e.data.size)chunks.push(e.data)};
+  let stopped=false;
+  const result=new Promise((res,rej)=>{rec.onstop=()=>{try{ac&&ac.close()}catch(e){}stream.getTracks().forEach(tr=>tr.stop());
+    const type=mime.split(";")[0];const b=new Blob(chunks,{type});b.size?res(b):rej({})};rec.onerror=()=>rej({})});
+  const finish=()=>{if(stopped)return;stopped=true;try{v.pause()}catch(e){}if(rec.state!=="inactive")rec.stop()};
+  const draw=()=>{if(stopped)return;ctx.drawImage(v,0,0,c.width,c.height);onProg(v.currentTime/dur);if(v.currentTime>=dur-0.05||v.ended)return finish();next()};
+  const next=()=>v.requestVideoFrameCallback?v.requestVideoFrameCallback(draw):requestAnimationFrame(draw);
+  v.onended=finish;v.currentTime=0;v.controls=false;
+  try{ctx.drawImage(v,0,0,c.width,c.height)}catch(e){}
+  rec.start(1000);
+  const pp=v.play();
+  next();
+  return Promise.resolve(pp).then(()=>result,()=>{finish();return Promise.reject({})});
+}
+async function shrink(file){
+  if(file.type==="image/gif"||file.type==="image/svg+xml")return file;
+  try{const bmp=await createImageBitmap(file);const max=1600,sc=Math.min(1,max/Math.max(bmp.width,bmp.height));
+    const c=document.createElement("canvas");c.width=Math.round(bmp.width*sc);c.height=Math.round(bmp.height*sc);c.getContext("2d").drawImage(bmp,0,0,c.width,c.height);
+    const b=await new Promise(r=>c.toBlob(r,"image/webp",.86));if(b&&b.type==="image/webp")return b;
+    const j=await new Promise(r=>c.toBlob(r,"image/jpeg",.86));return j||file}catch(e){return file}
+}
+
+/* ---------- instagram video editor ---------- */
+function editReel(){
+  const R={id:uid("rl"),url:"",caption:"",video:null,date:today()};
+  const s=openScrim("","sheet");const box=s.firstElementChild;box.style.width="min(560px,100%)";
+  box.innerHTML=`${X}<h2>${t("newReel")}</h2><form class="form" id="rf">
+   <label class="f full">${t("reelUrl")}<input class="in" id="rf-url" name="url" inputmode="url" placeholder="https://www.instagram.com/reel/…"></label>
+   <label class="f full">${t("caption")}<input class="in" id="rf-cap" name="caption" maxlength="140"></label>
+   <div class="full" style="display:grid;gap:8px"><b>${t("reelFile")}</b><div class="slots" id="rslot"></div><div id="vidBox" hidden style="display:grid;gap:8px;border:1.5px dashed var(--line);border-radius:var(--r-md);padding:12px"></div></div>
+   <div class="actions full"><button class="btn primary" type="submit">${t("save")}</button><button class="btn ghost" type="button" data-close>${t("cancel")}</button></div></form>`;
+  const drawSlot=()=>{$("#rslot",box).innerHTML=slotHTML("vid",3,R.video)};drawSlot();
+  box.addEventListener("click",e=>{if(e.target.closest("[data-close]"))return closeTop();if(e.target.closest("[data-rm]")){R.video=null;drawSlot()}});
+  box.addEventListener("change",async e=>{const inp=e.target.closest("input[type=file]");if(!inp||!inp.files[0])return;const file=inp.files[0],slot=inp.closest(".slot");inp.value="";
+    if(!assetsApi){toast(t("noAssets"));return}
+    const up=async b=>{const r=await assetsApi.upload(b,{type:b.type});R.video=r.id;drawSlot()};
+    if(/^video\/(mp4|webm)$/.test(file.type)&&file.size<=19.5*1048576){slot.classList.add("busy");slot.dataset.msg=t("uploading");try{await up(file)}catch(err){toast(t("upErr"));drawSlot()}}
+    else if(file.type.startsWith("video/")||/\.(mov|mp4|m4v|webm)$/i.test(file.name))prepVideo(file,box,up);
+    else toast(t("badType"));});
+  $("#rf",box).addEventListener("submit",e=>{e.preventDefault();const f=e.target.elements;
+    const raw=f.url.value.trim(),url=safeIg(raw);if(raw&&!url){toast(t("badUrl"));return}
+    if(!R.video){toast(t("needVid"));return}
+    R.url=url;R.caption=f.caption.value.trim();D.reels=[R,...(D.reels||[])];closeTop();markDirty();drawPanel();});
+}
+
+/* ---------- customer gallery editor ---------- */
+function editGal(){
+  const G={id:uid("g"),photo:null,name:"",caption:"",productId:"",date:today()};
+  const s=openScrim("","sheet");const box=s.firstElementChild;box.style.width="min(560px,100%)";
+  box.innerHTML=`${X}<h2>${t("newGal")}</h2><form class="form" id="gf">
+   <div class="full" style="display:grid;gap:8px"><div class="slots" id="gslot" style="grid-template-columns:minmax(0,180px)"></div></div>
+   <label class="f">${t("gName")}<input class="in" id="gf-name" name="name" maxlength="30"></label>
+   <label class="f">${t("gProd")}<select class="in" id="gf-prod" name="productId"><option value="">${t("gNone")}</option>${D.products.map(p=>`<option value="${esc(p.id)}">${esc(p.name)}</option>`).join("")}</select></label>
+   <label class="f full">${t("gCap")}<input class="in" id="gf-cap" name="caption" maxlength="120"></label>
+   <label class="check full"><input type="checkbox" id="gf-ok" name="ok">${t("gConsent")}</label>
+   <div class="help full">${t("galHelp")}</div>
+   <div class="actions full"><button class="btn primary" type="submit">${t("save")}</button><button class="btn ghost" type="button" data-close>${t("cancel")}</button></div></form>`;
+  const drawSlot=()=>{$("#gslot",box).innerHTML=slotHTML("img",0,G.photo)};drawSlot();
+  box.addEventListener("click",e=>{if(e.target.closest("[data-close]"))return closeTop();if(e.target.closest("[data-rm]")){G.photo=null;drawSlot()}});
+  box.addEventListener("change",async e=>{const inp=e.target.closest("input[type=file]");if(!inp||!inp.files[0])return;const file=inp.files[0],slot=inp.closest(".slot");
+    if(!assetsApi){toast(t("noAssets"));return}if(!file.type.startsWith("image/")){toast(t("badType"));return}
+    slot.classList.add("busy");slot.dataset.msg=t("uploading");
+    try{const r=await assetsApi.upload(await shrink(file));G.photo=r.id}catch(err){toast(t("upErr"))}drawSlot();});
+  $("#gf",box).addEventListener("submit",e=>{e.preventDefault();const f=e.target.elements;
+    if(!G.photo){toast(t("needPhoto"));return}if(!f.ok.checked){toast(t("needConsent"));return}
+    Object.assign(G,{name:f.name.value.trim(),caption:f.caption.value.trim(),productId:f.productId.value});
+    D.gallery=[G,...(D.gallery||[])];closeTop();markDirty();drawPanel();});
+}
+
+/* ---------- promo editor ---------- */
+function editPromo(id){
+  const orig=id?D.promos.find(x=>x.id===id):null;
+  const p=orig?structuredClone(orig):{id:uid("pr"),title:"",banner:"",kind:"percent",value:10,scope:"all",category:D.shop.categories[0]||"",productIds:[],start:today(),end:"",active:true,example:false};
+  const s=openScrim("","sheet");const box=s.firstElementChild;box.style.width="min(680px,100%)";
+  box.innerHTML=`${X}<h2>${orig?esc(orig.title):t("newPromo")}</h2><form class="form" id="prf">
+   <label class="f">${t("ptitle")}<input class="in" id="prf-title" name="title" value="${esc(p.title)}" placeholder="Halloween"></label>
+   <label class="f">${t("banner")}<input class="in" id="prf-banner" name="banner" value="${esc(p.banner)}" placeholder="Spooky week: 15% off!"></label>
+   <label class="f">${t("kind")}<select class="in" id="prf-kind" name="kind"><option value="percent" ${p.kind==="percent"?"selected":""}>${t("pct")}</option><option value="amount" ${p.kind==="amount"?"selected":""}>${t("amt")}</option></select></label>
+   <label class="f">${t("value")}<input class="in" id="prf-value" name="value" type="number" min="0" step="0.5" value="${p.value}"></label>
+   <label class="f">${t("start")}<input class="in" id="prf-start" name="start" type="date" value="${esc(p.start)}"></label>
+   <label class="f">${t("end")}<input class="in" id="prf-end" name="end" type="date" value="${esc(p.end)}"></label>
+   <label class="f">${t("scope")}<select class="in" id="prf-scope" name="scope"><option value="all" ${p.scope==="all"?"selected":""}>${t("sAll")}</option><option value="category" ${p.scope==="category"?"selected":""}>${t("sCat")}</option><option value="products" ${p.scope==="products"?"selected":""}>${t("sProd")}</option></select></label>
+   <label class="f" id="catWrap">${t("cat")}<select class="in" id="prf-cat" name="category">${D.shop.categories.map(c=>`<option ${c===p.category?"selected":""}>${esc(c)}</option>`).join("")}</select></label>
+   <div class="full" id="prodWrap"><div class="prodpick">${D.products.map(x=>`<label class="check"><input type="checkbox" name="pid" value="${esc(x.id)}" ${(p.productIds||[]).includes(x.id)?"checked":""}>${esc(x.name)}</label>`).join("")}</div></div>
+   <label class="check full"><input type="checkbox" id="prf-active" name="active" ${p.active?"checked":""}>${t("active")}</label>
+   <div class="actions full"><button class="btn primary" type="submit">${t("save")}</button><button class="btn ghost" type="button" data-close>${t("cancel")}</button></div></form>`;
+  const form=$("#prf",box),f=form.elements;
+  const sync=()=>{$("#catWrap",box).hidden=f.scope.value!=="category";$("#prodWrap",box).hidden=f.scope.value!=="products"};sync();
+  f.scope.addEventListener("change",sync);
+  box.addEventListener("click",e=>{if(e.target.closest("[data-close]"))closeTop()});
+  form.addEventListener("submit",e=>{e.preventDefault();
+    Object.assign(p,{title:f.title.value.trim()||f.banner.value.trim()||"Deal",banner:f.banner.value.trim(),kind:f.kind.value,value:Math.max(0,+f.value.value||0),start:f.start.value,end:f.end.value,scope:f.scope.value,category:f.category.value,productIds:$$('input[name="pid"]:checked',form).map(x=>x.value),active:f.active.checked});
+    if(p.kind==="percent")p.value=Math.min(100,p.value);
+    if(orig){if(JSON.stringify(orig)!==JSON.stringify(p))p.example=false;Object.assign(orig,p)}else D.promos.unshift(p);
+    closeTop();markDirty();drawPanel();});
+}
+
+/* ---------- publish (the page is the record) ---------- */
+const RESET=":root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}";
+function buildDoc(data){
+  const SC="<"+"/script>";
+  const keep=$$("[data-keep]").map(n=>n.outerHTML).join("");
+  const json=JSON.stringify(data).replace(/</g,"\\u003c");
+  const body=keep+`<style id="theme">${$("#theme").textContent}</style><template id="shell">${$("#shell").innerHTML}</template><div id="root"></div><script type="application/json" id="store">${json}${SC}<script id="app">${$("#app").textContent}${SC}`;
+  return `<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>${RESET}</style></head><body>${body}</body></html>`;
+}
+/* ---------- GitHub backend: data.json + media/ in the repo ---------- */
+const GH={cfg:ls.get("bi-gh"),
+  guess(){const h=location.hostname,m=h.match(/^([^.]+)\.github\.io$/i);const seg=location.pathname.split("/").filter(Boolean)[0];
+    return {owner:m?m[1]:"",repo:m?(seg&&!/\.html?$/.test(seg)?seg:h):"",branch:"main"}},
+  async api(path,opt={}){const c=GH.cfg;const res=await fetch(`https://api.github.com/repos/${c.owner}/${c.repo}${path}`,{...opt,headers:{"Authorization":"Bearer "+c.token,"Accept":"application/vnd.github+json",...(opt.headers||{})}});
+    if(!res.ok){const e=new Error("GitHub "+res.status);e.status=res.status;throw e}return res.status===204?null:res.json()},
+  async sha(path){try{return (await GH.api(`/contents/${path}?ref=${encodeURIComponent(GH.cfg.branch)}`)).sha}catch(e){if(e.status===404)return null;throw e}},
+  b64(blob){return new Promise((res,rej)=>{const fr=new FileReader();fr.onload=()=>res(String(fr.result).split(",")[1]);fr.onerror=rej;fr.readAsDataURL(blob)})},
+  async put(path,blob,msg){const sha=await GH.sha(path);return GH.api(`/contents/${path}`,{method:"PUT",body:JSON.stringify({message:msg,content:await GH.b64(blob),branch:GH.cfg.branch,...(sha?{sha}:{})})})}
+};
+const EXT={"image/webp":"webp","image/jpeg":"jpg","image/png":"png","image/gif":"gif","video/mp4":"mp4","video/webm":"webm"};
+const ghAssets={
+  async upload(b,o={}){const type=(o.type||b.type||"").split(";")[0];const ext=EXT[type];if(!ext)throw{code:"unsupported_type"};
+    if(b.size>40*1048576)throw{code:"too_large"};const path=`media/${Date.now().toString(36)}-${Math.random().toString(36).slice(2,7)}.${ext}`;
+    try{await GH.put(path,b,"Add "+path)}catch(e){throw{code:"upstream_error"}}return {id:path,url:path}},
+  async list(){let items=[];try{items=await GH.api(`/contents/media?ref=${encodeURIComponent(GH.cfg.branch)}`)}catch(e){if(e.status!==404)throw e}
+    items=(items||[]).filter(x=>x.type==="file"&&x.name!==".gitkeep");const bytes=items.reduce((a,x)=>a+x.size,0);
+    return {assets:items.map(x=>({id:x.path,sha:x.sha,sizeBytes:x.size})),usage:{files:items.length,bytes,maxFiles:1000,maxBytes:1024*1048576}}},
+  async delete(id){const r=await ghAssets.list();const a=r.assets.find(x=>x.id===id);if(!a)return{deleted:false};
+    await GH.api(`/contents/${id}`,{method:"DELETE",body:JSON.stringify({message:"Remove "+id,sha:a.sha,branch:GH.cfg.branch})});return{deleted:true}}
+};
+async function publish(){
+  if(!canAdmin){toast(t("noPub"));return}
+  const btn=$("#pubBtn");if(btn){btn.disabled=true;btn.textContent=t("publishing")}
+  const next=structuredClone(D);next.rev=(SAVED.rev||0)+1;next.updatedAt=new Date().toISOString();
+  try{await GH.put("data.json",new Blob([JSON.stringify(next,null,1)],{type:"application/json"}),"Update shop");
+    SAVED=next;D=structuredClone(next);dirty=false;ls.del("bi-draft");drawAdmin();renderShop();toast(t("ghPub"));}
+  catch(err){toast(t("upErr")+" ("+(err.status||"")+")");if(btn){btn.disabled=false;btn.textContent=t("publish")}}
+}
+function signIn(){
+  const g={...GH.guess(),...(GH.cfg||{})};
+  const s=openScrim("","sheet");const box=s.firstElementChild;
+  box.innerHTML=`${X}<h2>${t("ghTitle")}</h2><p class="help">${t("ghHelp")}</p><form class="form" id="ghf">
+   <label class="f">${t("ghOwner")}<input class="in" id="gh-owner" name="owner" value="${esc(g.owner)}" required autocapitalize="off"></label>
+   <label class="f">${t("ghRepo")}<input class="in" id="gh-repo" name="repo" value="${esc(g.repo)}" required autocapitalize="off"></label>
+   <label class="f">${t("ghBranch")}<input class="in" id="gh-branch" name="branch" value="${esc(g.branch||"main")}" required autocapitalize="off"></label>
+   <label class="f full">${t("ghToken")}<input class="in" id="gh-token" name="token" type="password" autocomplete="off" required></label>
+   <div class="actions full"><button class="btn primary" type="submit">${t("ghGo")}</button><button class="btn ghost" type="button" data-lang>${t("lang")}</button></div></form>`;
+  box.addEventListener("click",e=>{if(e.target.closest("[data-close]"))closeTop();if(e.target.closest("[data-lang]")){lang=lang==="es"?"en":"es";ls.set("bi-lang",lang);closeTop();signIn()}});
+  $("#ghf",box).addEventListener("submit",async e=>{e.preventDefault();const f=e.target.elements;
+    GH.cfg={owner:f.owner.value.trim(),repo:f.repo.value.trim(),branch:f.branch.value.trim()||"main",token:f.token.value.trim()};
+    try{const info=await GH.api("");if(!info.permissions||!info.permissions.push)throw 0;ls.set("bi-gh",GH.cfg);closeTop();await enterAdmin(true)}
+    catch(err){GH.cfg=null;toast(t("ghBad"))}});
+}
+async function loadData(){
+  try{let data;
+    if(canAdmin){const r=await GH.api(`/contents/data.json?ref=${encodeURIComponent(GH.cfg.branch)}`,{headers:{"Accept":"application/vnd.github.raw+json"}});data=r}
+    else{const res=await fetch("data.json?t="+Date.now(),{cache:"no-store"});if(!res.ok)return;data=await res.json()}
+    if(data&&data.products){SAVED=data;D=structuredClone(data);renderShop()}}catch(e){}
+}
+async function enterAdmin(open){
+  canAdmin=true;assetsApi=ghAssets;$("#adminBtn").hidden=false;
+  await loadData();
+  const stash=ls.get("bi-draft");
+  if(stash&&stash.base===SAVED.rev&&JSON.stringify(stash.data)!==JSON.stringify(SAVED)){D=stash.data;dirty=true;renderShop();toast(t("restored"))}
+  if(open)openAdmin();
+}
+async function initCaps(){
+  $("#adminLink").addEventListener("click",e=>{e.preventDefault();canAdmin?openAdmin():signIn()});
+  if(GH.cfg&&GH.cfg.token){try{await GH.api("");await enterAdmin(location.hash==="#admin");return}catch(e){if(e.status===401)ls.del("bi-gh")}}
+  await loadData();
+  if(location.hash==="#admin")signIn();
+}
+/* ---------- boot ---------- */
+function boot(){
+  $("#root").appendChild($("#shell").content.cloneNode(true));
+  renderShop();
+  $("#grid").addEventListener("click",e=>{const c=e.target.closest("[data-open]");if(c)openProduct(c.dataset.open)});
+  $("#chips").addEventListener("click",e=>{const c=e.target.closest("[data-cat]");if(c){filter.cat=c.dataset.cat;renderChips();renderGrid()}});
+  $("#q").addEventListener("input",e=>{filter.q=e.target.value;renderGrid()});
+  $("#listBtn").addEventListener("click",openList);
+  $("#gallery").addEventListener("click",e=>{const c=e.target.closest("[data-gal]");if(c)openGallery(c.dataset.gal)});
+  $("#customForm").addEventListener("submit",e=>{e.preventDefault();const f=e.target.elements;
+    if(!f.idea.value.trim()){f.idea.focus();return}
+    const d=f.date.value?new Date(f.date.value+"T12:00:00").toLocaleDateString("en-US",{month:"long",day:"numeric",year:"numeric"}):"";
+    const lines=[`Hi ${D.shop.name}! I have a custom idea:`,`• Type: ${f.kind.value}`,`• Idea: ${f.idea.value.trim()}`,`• Quantity: ${Math.max(1,+f.qty.value||1)}`];
+    if(f.colors.value.trim())lines.push(`• Colors: ${f.colors.value.trim()}`);
+    if(f.size.value.trim())lines.push(`• Size: ${f.size.value.trim()}`);
+    if(f.budget.value.trim())lines.push(`• Budget: ${f.budget.value.trim()}`);
+    if(d)lines.push(`• Needed by: ${d}`);
+    if(f.name.value.trim())lines.push(`• From: ${f.name.value.trim()}`);
+    lines.push("Thank you!");
+    $("#c-msg").value=lines.join("\n");
+    $("#c-dm").href="https://ig.me/m/"+encodeURIComponent((D.shop.instagram||"").replace(/^@/,""));
+    $("#customOut").hidden=false;
+    buildCard(lines).then(url=>{const w=$("#c-cardwrap");if(!url){w.hidden=true;return}$("#c-card").src=url;w.hidden=false});
+    $("#c-msg").scrollIntoView({behavior:"smooth",block:"center"});});
+  $("#c-photo").addEventListener("change",e=>{const f=e.target.files[0];if(!f||!f.type.startsWith("image/"))return;if(refURL)URL.revokeObjectURL(refURL);refURL=URL.createObjectURL(f);const th=$("#c-thumb");th.src=refURL;th.hidden=false;$("#c-nophoto").hidden=false;e.target.value=""});
+  $("#c-nophoto").addEventListener("click",()=>{if(refURL)URL.revokeObjectURL(refURL);refURL=null;$("#c-thumb").hidden=true;$("#c-nophoto").hidden=true;$("#c-cardwrap").hidden=true});
+  $("#c-save").hidden=false;$("#c-save").addEventListener("click",()=>{const a=document.createElement("a");a.href=$("#c-card").src;a.download="big-ideas-request.jpg";document.body.appendChild(a);a.click();a.remove()});
+  $("#c-copy").addEventListener("click",async()=>{const ta=$("#c-msg");try{await navigator.clipboard.writeText(ta.value);toast("Request copied")}catch(err){ta.focus();ta.select();toast("Selected — press copy")}});
+  $("#adminBtn").addEventListener("click",openAdmin);
+  $("#adminLabel").textContent=t("admin");
+  initCaps();
+}
+boot();
+})();
+</script>
+
+</body>
+</html>
